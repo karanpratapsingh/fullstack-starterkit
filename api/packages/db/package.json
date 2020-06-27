@@ -20,6 +20,10 @@
   ],
   "scripts": {
     "generate": "yarn prisma generate --schema=./prisma/schema.prisma",
+    "introspect": "yarn prisma introspect --schema=./prisma/schema.prisma",
+    "studio": "yarn prisma studio --experimental --schema=./prisma/schema.prisma",
+    "migrate:save": "yarn prisma migrate save --experimental --schema=./prisma/schema.prisma",
+    "migrate:up": "yarn prisma migrate up --experimental --schema=./prisma/schema.prisma",
     "postinstall": "yarn generate"
   },
   "devDependencies": {
