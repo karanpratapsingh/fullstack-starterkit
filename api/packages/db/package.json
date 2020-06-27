@@ -18,7 +18,14 @@
       "url": "https://github.com/karanpratapsingh"
     }
   ],
+  "scripts": {
+    "generate": "yarn prisma generate --schema=./prisma/schema.prisma",
+    "postinstall": "yarn generate"
+  },
   "devDependencies": {
     "@prisma/cli": "^2.1.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^2.1.3"
   }
 }

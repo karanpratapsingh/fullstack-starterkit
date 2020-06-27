@@ -1,5 +1,5 @@
-const DB = (): void => {
-  // DB Package
-};
+import { PrismaClient } from '@prisma/client';
 
-export default DB;
+const prisma = new PrismaClient();
+
+export { prisma };
