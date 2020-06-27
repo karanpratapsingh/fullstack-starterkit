@@ -21,6 +21,7 @@
   ],
   "scripts": {
     "start": "yarn nodemon --exec yarn ts-node index.ts",
+    "test": "jest --passWithNoTests --detectOpenHandles --verbose",
     "generate:schema": "yarn workspace @project-api/graphql run generate",
     "generate:prisma": "yarn workspace @project-api/db run generate"
   },
