@@ -1,5 +1,5 @@
 type Post {
-  id: Int
+  id: ID
   content: String
   published: Boolean!
   title: String!
@@ -7,7 +7,7 @@ type Post {
 }
 
 type User {
-  id: Int!
+  id: ID!
   email: String!
   name: String!
   posts: [Post]
@@ -19,7 +19,7 @@ type Query {
 }
 
 input GetPostInput {
-  id: Int!
+  id: ID!
 }
 
 type GetPostResult {
@@ -27,7 +27,7 @@ type GetPostResult {
 }
 
 input GetUserInput {
-  id: Int!
+  id: ID!
 }
 
 type GetUserResult {

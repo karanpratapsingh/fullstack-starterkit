@@ -13,6 +13,8 @@ export type Parent = {
   id: Scalars['ID'];
 };
 
+export type Args = any;
+
 export type Context = {
   prisma: PrismaClient;
 };

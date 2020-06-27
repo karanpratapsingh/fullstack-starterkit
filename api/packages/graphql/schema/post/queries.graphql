@@ -3,7 +3,7 @@ type Query {
 }
 
 input GetPostInput {
-  id: Int!
+  id: ID!
 }
 
 type GetPostResult {

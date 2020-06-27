@@ -3,7 +3,7 @@ type Query {
 }
 
 input GetUserInput {
-  id: Int!
+  id: ID!
 }
 
 type GetUserResult {

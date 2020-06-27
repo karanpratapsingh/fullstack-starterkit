@@ -1,5 +1,5 @@
 type Post {
-  id: Int
+  id: ID
   content: String
   published: Boolean!
   title: String!

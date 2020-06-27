@@ -11,7 +11,7 @@ export type Scalars = {
 
 export type Post = {
   __typename?: 'Post';
-  id?: Maybe<Scalars['Int']>;
+  id?: Maybe<Scalars['ID']>;
   content?: Maybe<Scalars['String']>;
   published: Scalars['Boolean'];
   title: Scalars['String'];
@@ -20,7 +20,7 @@ export type Post = {
 
 export type User = {
   __typename?: 'User';
-  id: Scalars['Int'];
+  id: Scalars['ID'];
   email: Scalars['String'];
   name: Scalars['String'];
   posts?: Maybe<Array<Maybe<Post>>>;
@@ -43,7 +43,7 @@ export type QueryGetUserArgs = {
 };
 
 export type GetPostInput = {
-  id: Scalars['Int'];
+  id: Scalars['ID'];
 };
 
 export type GetPostResult = {
@@ -52,7 +52,7 @@ export type GetPostResult = {
 };
 
 export type GetUserInput = {
-  id: Scalars['Int'];
+  id: Scalars['ID'];
 };
 
 export type GetUserResult = {

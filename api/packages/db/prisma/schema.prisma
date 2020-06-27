@@ -8,15 +8,15 @@ datasource db {
 }
 
 model User {
-  id    Int    @default(autoincrement()) @id
+  id    String @default(cuid()) @id
   email String @unique
   name  String
   posts Post[]
 }
 
 model Post {
-  id        Int     @default(autoincrement()) @id
-  authorId  Int?
+  id        String  @default(cuid()) @id
+  authorId  String?
   content   String?
   published Boolean @default(false)
   title     String
