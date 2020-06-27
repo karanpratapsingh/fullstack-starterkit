@@ -1,0 +1,28 @@
+{
+  "name": "@project-api/graphql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Karan Pratap Singh <karan.pratapsingh686@gmail.com>",
+  "license": "MIT",
+  "description": "Starter kit for Full Stack projects that scales",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karanpratapsingh/fullstack-starterkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/karanpratapsingh/fullstack-starterkit/issues"
+  },
+  "contributors": [
+    {
+      "name": "Karan Pratap Singh",
+      "url": "https://github.com/karanpratapsingh"
+    }
+  ],
+  "dependencies": {
+    "@graphql-codegen/cli": "^1.15.4",
+    "@graphql-codegen/schema-ast": "^1.15.4",
+    "@graphql-codegen/typescript": "^1.15.4",
+    "graphql": "^15.1.0",
+    "graphql-tools": "^6.0.11"
+  }
+}
