@@ -7,5 +7,5 @@ input GetPostInput {
 }
 
 type GetPostResult {
-  post: Post!
+  post: Post
 }

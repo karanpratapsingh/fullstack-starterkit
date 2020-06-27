@@ -7,5 +7,5 @@ input GetUserInput {
 }
 
 type GetUserResult {
-  user: User!
+  user: User
 }

@@ -23,7 +23,7 @@ input GetPostInput {
 }
 
 type GetPostResult {
-  post: Post!
+  post: Post
 }
 
 input GetUserInput {
@@ -31,5 +31,5 @@ input GetUserInput {
 }
 
 type GetUserResult {
-  user: User!
+  user: User
 }

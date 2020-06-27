@@ -48,7 +48,7 @@ export type GetPostInput = {
 
 export type GetPostResult = {
   __typename?: 'GetPostResult';
-  post: Post;
+  post?: Maybe<Post>;
 };
 
 export type GetUserInput = {
@@ -57,5 +57,5 @@ export type GetUserInput = {
 
 export type GetUserResult = {
   __typename?: 'GetUserResult';
-  user: User;
+  user?: Maybe<User>;
 };
