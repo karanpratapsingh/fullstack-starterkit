@@ -1,0 +1,24 @@
+{
+  "name": "@project-api/db",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Karan Pratap Singh <karan.pratapsingh686@gmail.com>",
+  "license": "MIT",
+  "description": "Starter kit for Full Stack projects that scales",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karanpratapsingh/fullstack-starterkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/karanpratapsingh/fullstack-starterkit/issues"
+  },
+  "contributors": [
+    {
+      "name": "Karan Pratap Singh",
+      "url": "https://github.com/karanpratapsingh"
+    }
+  ],
+  "devDependencies": {
+    "@prisma/cli": "^2.1.3"
+  }
+}
