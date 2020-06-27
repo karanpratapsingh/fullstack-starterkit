@@ -1,0 +1,11 @@
+type Query {
+  getUser(input: GetUserInput!): GetUserResult!
+}
+
+input GetUserInput {
+  id: Int!
+}
+
+type GetUserResult {
+  user: User!
+}

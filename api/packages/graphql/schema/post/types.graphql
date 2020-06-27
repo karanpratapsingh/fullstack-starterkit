@@ -1,0 +1,7 @@
+type Post {
+  id: Int
+  content: String
+  published: Boolean!
+  title: String!
+  author: User
+}
