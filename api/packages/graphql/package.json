@@ -18,6 +18,9 @@
       "url": "https://github.com/karanpratapsingh"
     }
   ],
+  "scripts": {
+    "generate": "yarn graphql-codegen --config codegen.yml"
+  },
   "dependencies": {
     "@graphql-codegen/cli": "^1.15.4",
     "@graphql-codegen/schema-ast": "^1.15.4",
