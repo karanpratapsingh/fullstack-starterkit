@@ -4,6 +4,6 @@ generates:
   ./schema.graphql:
     plugins:
       - schema-ast
-  .../../types/graphql.ts:
+  .../../types/schema.ts:
     plugins:
       - typescript

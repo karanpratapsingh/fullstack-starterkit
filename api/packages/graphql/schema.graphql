@@ -1,0 +1,35 @@
+type Post {
+  id: Int
+  content: String
+  published: Boolean!
+  title: String!
+  author: User
+}
+
+type User {
+  id: Int!
+  email: String!
+  name: String!
+  posts: [Post]
+}
+
+type Query {
+  getPost(input: GetPostInput!): GetPostResult!
+  getUser(input: GetUserInput!): GetUserResult!
+}
+
+input GetPostInput {
+  id: Int!
+}
+
+type GetPostResult {
+  post: Post!
+}
+
+input GetUserInput {
+  id: Int!
+}
+
+type GetUserResult {
+  user: User!
+}
