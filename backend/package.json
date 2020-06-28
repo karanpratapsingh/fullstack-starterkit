@@ -1,5 +1,5 @@
 {
-  "name": "project-api",
+  "name": "project-backend",
   "version": "1.0.0",
   "main": "index.ts",
   "author": "Karan Pratap Singh <karan.pratapsingh686@gmail.com>",
@@ -22,8 +22,8 @@
   "scripts": {
     "start": "yarn nodemon --exec yarn ts-node index.ts",
     "test": "jest --passWithNoTests --detectOpenHandles --verbose",
-    "generate:schema": "yarn workspace @project-api/graphql run generate",
-    "generate:prisma": "yarn workspace @project-api/db run generate"
+    "generate:schema": "yarn workspace @project-backend/graphql run generate",
+    "generate:prisma": "yarn workspace @project-backend/db run generate"
   },
   "dependencies": {
     "@types/express": "^4.17.6",

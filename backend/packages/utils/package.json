@@ -1,5 +1,5 @@
 {
-  "name": "@project-api/utils",
+  "name": "@project-backend/utils",
   "version": "1.0.0",
   "main": "index.ts",
   "author": "Karan Pratap Singh <karan.pratapsingh686@gmail.com>",
