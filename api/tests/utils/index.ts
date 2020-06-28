@@ -3,8 +3,7 @@
  * This test suite utils helps with setting up jest environment
  * for testing database and graphql api
  */
-import { PrismaClient } from '@prisma/client';
-import { prisma } from '../../packages/db';
+import { Prisma, prisma } from '../../packages/db';
 import { GraphQLApi, GraphQLApiArgs } from '../../packages/graphql';
 
 enum TestSuiteType {
@@ -13,7 +12,7 @@ enum TestSuiteType {
 }
 
 class TestSuiteUtils {
-  prisma: PrismaClient;
+  prisma: Prisma;
   graphQLApi!: GraphQLApi;
 
   constructor(type: TestSuiteType) {

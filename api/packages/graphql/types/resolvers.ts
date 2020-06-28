@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { Prisma } from '../../db';
 import { GraphQLResolveInfo } from 'graphql';
 import { Scalars } from './schema';
 
@@ -9,7 +9,7 @@ export type Parent = {
 export type Args = any;
 
 export type Context = {
-  prisma: PrismaClient;
+  prisma: Prisma;
 };
 
 export type Info = GraphQLResolveInfo;
