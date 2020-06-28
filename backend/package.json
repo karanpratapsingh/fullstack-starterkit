@@ -23,7 +23,8 @@
     "start": "yarn nodemon --exec yarn ts-node index.ts",
     "test": "jest --passWithNoTests --detectOpenHandles --verbose",
     "generate:schema": "yarn workspace @project-backend/graphql run generate",
-    "generate:prisma": "yarn workspace @project-backend/db run generate"
+    "generate:prisma": "yarn workspace @project-backend/db run generate",
+    "postinstall": "yarn generate:prisma"
   },
   "dependencies": {
     "@types/express": "^4.17.6",
