@@ -19,6 +19,7 @@
     }
   ],
   "dependencies": {
-    "cuid": "^2.1.8"
+    "cuid": "^2.1.8",
+    "winston": "^3.3.3"
   }
 }
