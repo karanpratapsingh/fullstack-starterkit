@@ -1,13 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { GraphQLResolveInfo } from 'graphql';
-
-type Scalars = {
-  ID: string;
-  String: string;
-  Boolean: boolean;
-  Int: number;
-  Float: number;
-};
+import { Scalars } from './schema';
 
 export type Parent = {
   id: Scalars['ID'];

@@ -11,7 +11,7 @@ export type Scalars = {
 
 export type Post = {
   __typename?: 'Post';
-  id?: Maybe<Scalars['ID']>;
+  id: Scalars['ID'];
   content?: Maybe<Scalars['String']>;
   published: Scalars['Boolean'];
   title: Scalars['String'];
