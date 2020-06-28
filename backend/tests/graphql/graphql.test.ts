@@ -2,7 +2,6 @@ import TestSuiteUtils, { TestSuiteType } from '../utils';
 import { GraphQLApi } from '../../packages/graphql';
 
 const utils = new TestSuiteUtils(TestSuiteType.GRAPHQL);
-utils.setupJest();
 
 let graphQLApi: GraphQLApi;
 

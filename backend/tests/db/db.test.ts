@@ -3,7 +3,6 @@ import { User, Post } from '@prisma/client';
 import { Prisma } from '../../packages/db';
 
 const utils = new TestSuiteUtils(TestSuiteType.DB);
-utils.setupJest();
 
 let prisma: Prisma;
 let createUserInput;

@@ -7,7 +7,7 @@ import { Prisma, prisma } from '../../packages/db';
 import { GraphQLApi, GraphQLApiArgs } from '../../packages/graphql';
 import { User, Post } from '../../packages/graphql/types';
 import { BatchPayload } from '@prisma/client';
-import { generateId } from '../../packages/utils';
+import { Logger, logger, generateId } from '../../packages/utils';
 
 enum TestSuiteType {
   DB,
@@ -15,23 +15,26 @@ enum TestSuiteType {
 }
 
 class TestSuiteUtils {
-  prisma: Prisma;
+  prisma: Prisma = prisma;
   graphQLApi!: GraphQLApi;
+  logger: Logger = logger;
+
   private testIdPrefix: string = '_test_id';
 
   constructor(type: TestSuiteType) {
-    this.prisma = prisma;
     if (type === TestSuiteType.GRAPHQL) {
       const graphQLApiArgs: GraphQLApiArgs = {
         context: {
-          prisma: this.prisma
+          prisma: this.prisma,
+          logger: this.logger
         }
       };
       this.graphQLApi = new GraphQLApi(graphQLApiArgs);
     }
+    this.setupJest();
   }
 
-  setupJest = (): void => {
+  private setupJest = (): void => {
     global.afterAll(this.afterAll);
   };
 
@@ -42,6 +45,7 @@ class TestSuiteUtils {
   };
 
   cleanup = async (): Promise<void> => {
+    this.logger.info('Running DB Cleanup');
     const input = {
       where: {
         id: {
@@ -51,10 +55,10 @@ class TestSuiteUtils {
     };
 
     const users: BatchPayload = await this.prisma.user.deleteMany(input);
-    const post: BatchPayload = await this.prisma.user.deleteMany(input);
+    const posts: BatchPayload = await this.prisma.user.deleteMany(input);
 
-    console.log(`Cleaned ${users.count} users(s)`);
-    console.log(`Cleaned ${post.count} post(s)`);
+    this.logger.info(`Cleaned ${users.count} users(s)`);
+    this.logger.info(`Cleaned ${posts.count} post(s)`);
   };
 
   createUserInput = (user?: User): User => {
