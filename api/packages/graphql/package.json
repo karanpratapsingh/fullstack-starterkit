@@ -1,7 +1,7 @@
 {
   "name": "@project-api/graphql",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "author": "Karan Pratap Singh <karan.pratapsingh686@gmail.com>",
   "license": "MIT",
   "description": "Starter kit for Full Stack projects that scales",

@@ -1,7 +1,6 @@
 {
   "name": "fullstack-starterkit",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "Karan Pratap Singh <karan.pratapsingh686@gmail.com>",
   "license": "MIT",
   "description": "Starter kit for Full Stack projects that scales",
