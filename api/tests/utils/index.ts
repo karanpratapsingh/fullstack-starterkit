@@ -5,6 +5,9 @@
  */
 import { Prisma, prisma } from '../../packages/db';
 import { GraphQLApi, GraphQLApiArgs } from '../../packages/graphql';
+import { User, Post } from '../../packages/graphql/types';
+import { BatchPayload } from '@prisma/client';
+import { generateId } from '../../packages/utils';
 
 enum TestSuiteType {
   DB,
@@ -14,6 +17,7 @@ enum TestSuiteType {
 class TestSuiteUtils {
   prisma: Prisma;
   graphQLApi!: GraphQLApi;
+  private testIdPrefix: string = '_test_id';
 
   constructor(type: TestSuiteType) {
     this.prisma = prisma;
@@ -32,9 +36,46 @@ class TestSuiteUtils {
   };
 
   private afterAll = async (done: () => void): Promise<void> => {
-    // TODO: write db test cleanups
+    await this.cleanup();
     await this.prisma.disconnect();
     done();
+  };
+
+  cleanup = async (): Promise<void> => {
+    const input = {
+      where: {
+        id: {
+          contains: this.testIdPrefix
+        }
+      }
+    };
+
+    const users: BatchPayload = await this.prisma.user.deleteMany(input);
+    const post: BatchPayload = await this.prisma.user.deleteMany(input);
+
+    console.log(`Cleaned ${users.count} users(s)`);
+    console.log(`Cleaned ${post.count} post(s)`);
+  };
+
+  createUserInput = (user?: User): User => {
+    const id = generateId(this.testIdPrefix);
+    const uniqueEmail = generateId();
+    return {
+      id,
+      name: 'test user',
+      email: `${uniqueEmail}@email.com`,
+      ...user
+    };
+  };
+
+  createPostInput = (post?: Post): Post => {
+    const id = generateId(this.testIdPrefix);
+    return {
+      id,
+      title: 'test title',
+      published: true,
+      ...post
+    };
   };
 }
 
