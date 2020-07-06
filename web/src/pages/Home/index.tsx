@@ -1,13 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-interface HomeProps { };
-
-function Home(): React.ReactElement<HomeProps> {
+function Home(): React.ReactElement<{}> {
   return (
     <div>
       <span>Home</span>
     </div>
   );
-};
+}
 
 export default Home;
