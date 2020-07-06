@@ -24,13 +24,15 @@
     "generate:schema": "yarn workspace @project-backend/graphql run generate",
     "generate:prisma": "yarn workspace @project-backend/db run generate",
     "postinstall": "yarn generate:prisma",
-    "build": "tsc --build"
+    "build": "tsc --build && yarn copy",
+    "copy": "yarn copyfiles -e build/**/*.graphql **/*.graphql build"
   },
   "dependencies": {
     "@types/express": "^4.17.6",
     "@types/lodash": "^4.14.157",
     "@types/node": "^14.0.14",
     "apollo-server-express": "^2.15.0",
+    "copyfiles": "^2.3.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "lodash": "^4.17.15",
