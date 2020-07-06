@@ -1,5 +1,4 @@
 {
-  "extends": "../tsconfig.json",
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
@@ -19,13 +18,23 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@app/*": [
+        "./packages/*"
+      ],
+      "@app/config/*": [
+        "./config/*"
+      ]
+    },
   },
   "include": [
     "**/*",
   ],
   "exclude": [
     "**/node_modules",
-    "**/build"
+    "**/build",
+    "**/tests"
   ]
 }
