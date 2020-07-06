@@ -1,7 +1,12 @@
 {
   "name": "fullstack-starterkit",
-  "version": "1.0.0",
-  "author": "Karan Pratap Singh <karan.pratapsingh686@gmail.com>",
+  "version": "0.1.0",
+  "author": {
+    "name": "Karan Pratap Singh",
+    "email": "contact@karanpratapsingh.com",
+    "url": "https://karanpratapsingh.com"
+  },
+  "private": true,
   "license": "MIT",
   "description": "Starter kit for Full Stack projects that scales",
   "repository": {
@@ -11,12 +16,6 @@
   "bugs": {
     "url": "https://github.com/karanpratapsingh/fullstack-starterkit/issues"
   },
-  "contributors": [
-    {
-      "name": "Karan Pratap Singh",
-      "url": "https://github.com/karanpratapsingh"
-    }
-  ],
   "scripts": {
     "lint": "yarn eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:fix": "yarn prettier --write . && yarn lint --fix"

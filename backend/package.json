@@ -1,11 +1,15 @@
 {
   "name": "project-backend",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "index.ts",
-  "author": "Karan Pratap Singh <karan.pratapsingh686@gmail.com>",
+  "author": {
+    "name": "Karan Pratap Singh",
+    "email": "contact@karanpratapsingh.com",
+    "url": "https://karanpratapsingh.com"
+  },
   "private": true,
   "license": "MIT",
-  "description": "Starter kit for Full Stack projects that scales",
+  "description": "Full Stack starterkit backend",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/karanpratapsingh/fullstack-starterkit.git"
@@ -13,12 +17,6 @@
   "bugs": {
     "url": "https://github.com/karanpratapsingh/fullstack-starterkit/issues"
   },
-  "contributors": [
-    {
-      "name": "Karan Pratap Singh",
-      "url": "https://github.com/karanpratapsingh"
-    }
-  ],
   "scripts": {
     "start": "yarn nodemon --exec yarn ts-node index.ts",
     "test": "jest --passWithNoTests --detectOpenHandles --verbose",

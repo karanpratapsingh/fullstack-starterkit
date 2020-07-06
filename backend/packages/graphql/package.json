@@ -1,10 +1,14 @@
 {
   "name": "@project-backend/graphql",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "index.ts",
-  "author": "Karan Pratap Singh <karan.pratapsingh686@gmail.com>",
+  "author": {
+    "name": "Karan Pratap Singh",
+    "email": "contact@karanpratapsingh.com",
+    "url": "https://karanpratapsingh.com"
+  },
   "license": "MIT",
-  "description": "Starter kit for Full Stack projects that scales",
+  "description": "GraphQL package for full starterkit backend",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/karanpratapsingh/fullstack-starterkit.git"
@@ -12,12 +16,6 @@
   "bugs": {
     "url": "https://github.com/karanpratapsingh/fullstack-starterkit/issues"
   },
-  "contributors": [
-    {
-      "name": "Karan Pratap Singh",
-      "url": "https://github.com/karanpratapsingh"
-    }
-  ],
   "scripts": {
     "generate": "yarn graphql-codegen --config codegen.yml"
   },
