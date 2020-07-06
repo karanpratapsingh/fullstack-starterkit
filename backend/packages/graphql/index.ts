@@ -1,8 +1,8 @@
-import schema from './schema';
-import { prisma } from '../db';
+import { prisma } from '@backend/db';
+import { logger } from '@backend/utils';
 import { ApolloServerExpressConfig } from 'apollo-server-express';
 import GraphQLApi, { GraphQLApiArgs } from './api';
-import { logger } from '../utils';
+import schema from './schema';
 
 const GraphQLServerOptions: ApolloServerExpressConfig = {
   schema,
@@ -14,3 +14,4 @@ const GraphQLServerOptions: ApolloServerExpressConfig = {
 };
 
 export { GraphQLApi, GraphQLApiArgs, schema, GraphQLServerOptions };
+

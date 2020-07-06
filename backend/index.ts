@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { ApolloServer } from 'apollo-server-express';
-import { GraphQLServerOptions } from './packages/graphql';
+import { GraphQLServerOptions } from '@backend/graphql';
 
 const app = express();
 app.use(cors());

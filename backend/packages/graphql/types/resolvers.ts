@@ -1,7 +1,7 @@
-import { Prisma } from '../../db';
+import { Prisma } from '@backend/db';
+import { Logger } from '@backend/utils';
 import { GraphQLResolveInfo } from 'graphql';
 import { Scalars } from './schema';
-import { Logger } from '../../utils';
 
 export type Parent = {
   id: Scalars['ID'];

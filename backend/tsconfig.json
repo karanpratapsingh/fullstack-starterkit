@@ -21,10 +21,10 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@app/*": [
+      "@backend/*": [
         "./packages/*"
       ],
-      "@app/config/*": [
+      "@backend/config/*": [
         "./config/*"
       ]
     },
