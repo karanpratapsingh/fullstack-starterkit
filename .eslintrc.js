@@ -10,6 +10,16 @@ module.exports = {
   settings: {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx']
+    },
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@backend/db', './backend/packages/db'],
+          ['@backend/graphql', './backend/packages/graphql'],
+          ['@backend/utils', './backend/packages/utils'],
+          ['@backend/config', './backend/config/index.ts']
+        ]
+      }
     }
   },
   env: {
@@ -22,6 +32,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:import/errors',
+    'plugin:import/warnings',
     'plugin:import/typescript'
   ],
   rules: {

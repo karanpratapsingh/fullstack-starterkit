@@ -21,11 +21,17 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@backend/*": [
-        "./packages/*"
+      "@backend/db": [
+        "packages/db"
       ],
-      "@backend/config/*": [
-        "./config/*"
+      "@backend/graphql": [
+        "packages/graphql"
+      ],
+      "@backend/utils": [
+        "packages/utils"
+      ],
+      "@backend/config": [
+        "config"
       ]
     },
   },

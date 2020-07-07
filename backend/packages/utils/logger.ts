@@ -1,6 +1,6 @@
 import winston, { Logger, Logform } from 'winston';
 import { join } from 'path';
-import Config from '../../config';
+import Config from '@backend/config';
 
 const { logPath } = Config;
 
