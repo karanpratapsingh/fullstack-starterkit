@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@web/assets": [
+        "src/assets"
+      ],
+      "@web/constants": [
+        "src/constants"
+      ],
+      "@web/global": [
+        "src/global"
+      ],
+      "@web/pages": [
+        "src/pages"
+      ],
+      "@web/theme": [
+        "src/theme"
+      ]
+    }
+  }
+}

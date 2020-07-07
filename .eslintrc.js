@@ -12,13 +12,22 @@ module.exports = {
       '@typescript-eslint/parser': ['.ts', '.tsx']
     },
     'import/resolver': {
+      node: {
+        extensions: ['.ts', '.tsx']
+      },
       alias: {
         map: [
           ['@backend/db', './backend/packages/db'],
           ['@backend/graphql', './backend/packages/graphql'],
           ['@backend/utils', './backend/packages/utils'],
-          ['@backend/config', './backend/config/index.ts']
-        ]
+          ['@backend/config', './backend/config/index.ts'],
+          ['@web/assets', './web/src/assets'],
+          ['@web/constants', './web/src/constants'],
+          ['@web/global', './web/src/global'],
+          ['@web/pages', './web/src/pages'],
+          ['@web/theme', './web/src/theme']
+        ],
+        extensions: ['.ts', '.tsx']
       }
     }
   },
@@ -54,6 +63,7 @@ module.exports = {
     'object-shorthand': ['error', 'always'],
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/ban-types': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
     // JSX RULES
     'jsx-quotes': ['error', 'prefer-single'],
     'react/jsx-boolean-value': 'error',
