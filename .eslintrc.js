@@ -22,8 +22,10 @@ module.exports = {
           ['@backend/utils', './backend/packages/utils'],
           ['@backend/config', './backend/config/index.ts'],
           ['@web/assets', './web/src/assets'],
+          ['@web/config', './web/src/config'],
           ['@web/constants', './web/src/constants'],
           ['@web/global', './web/src/global'],
+          ['@web/graphql', './web/src/graphql'],
           ['@web/pages', './web/src/pages'],
           ['@web/theme', './web/src/theme']
         ],

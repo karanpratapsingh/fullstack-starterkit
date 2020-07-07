@@ -5,11 +5,17 @@
       "@web/assets": [
         "src/assets"
       ],
+      "@web/config": [
+        "src/config"
+      ],
       "@web/constants": [
         "src/constants"
       ],
       "@web/global": [
         "src/global"
+      ],
+      "@web/graphql": [
+        "src/graphql"
       ],
       "@web/pages": [
         "src/pages"
