@@ -1,3 +1,4 @@
+// https://material-ui.com/customization/palette/
 const palette = {
   primary: {
     light: '#D1C4E9',
