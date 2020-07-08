@@ -22,6 +22,9 @@
       ],
       "@web/theme": [
         "src/theme"
+      ],
+      "@web/utils": [
+        "src/utils"
       ]
     }
   }

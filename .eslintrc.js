@@ -27,7 +27,8 @@ module.exports = {
           ['@web/global', './web/src/global'],
           ['@web/graphql', './web/src/graphql'],
           ['@web/pages', './web/src/pages'],
-          ['@web/theme', './web/src/theme']
+          ['@web/theme', './web/src/theme'],
+          ['@web/utils', './web/src/utils']
         ],
         extensions: ['.ts', '.tsx']
       }
