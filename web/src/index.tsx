@@ -6,16 +6,24 @@ import theme from '@web/theme';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { configureApolloClient } from '@web/graphql';
+import Config from '@web/config';
+
+const config = new Config(process.env);
+const client = configureApolloClient(config);
 
 function App(): React.ReactElement {
   return (
-    <ThemeProvider theme={theme}>
-      <Router>
-        <Switch>
-          <Route path={Routes.HOME} component={Home} />
-        </Switch>
-      </Router>
-    </ThemeProvider>
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Switch>
+            <Route path={Routes.HOME} component={Home} />
+          </Switch>
+        </Router>
+      </ThemeProvider>
+    </ApolloProvider>
   );
 }
 
