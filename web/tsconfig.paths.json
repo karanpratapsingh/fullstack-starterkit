@@ -14,6 +14,9 @@
       "@web/global": [
         "src/global"
       ],
+      "@web/layout": [
+        "src/layout"
+      ],
       "@web/graphql": [
         "src/graphql"
       ],

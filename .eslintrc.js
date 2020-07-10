@@ -25,6 +25,7 @@ module.exports = {
           ['@web/config', './web/src/config'],
           ['@web/constants', './web/src/constants'],
           ['@web/global', './web/src/global'],
+          ['@web/layout', './web/src/layout'],
           ['@web/graphql', './web/src/graphql'],
           ['@web/pages', './web/src/pages'],
           ['@web/theme', './web/src/theme'],
