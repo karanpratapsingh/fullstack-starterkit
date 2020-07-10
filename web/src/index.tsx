@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { configureApolloClient } from '@web/graphql';
 import Config from '@web/config';
+import { Footer } from '@web/layout';
 
 const config = new Config(process.env);
 const client = configureApolloClient(config);
@@ -21,6 +22,7 @@ function App(): React.ReactElement {
           <Switch>
             <Route path={Routes.HOME} component={Home} />
           </Switch>
+          <Route component={Footer} />
         </Router>
       </ThemeProvider>
     </ApolloProvider>
