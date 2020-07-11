@@ -12,7 +12,7 @@ const useStyles = makeStyles(({ palette, typography, spacing }) => ({
     backgroundColor: palette.grey[100]
   },
   body: {
-    fontSize: 12,
+    fontSize: 14,
     color: palette.grey[600],
     fontWeight: typography.fontWeightLight,
     marginTop: spacing(1)
@@ -25,7 +25,7 @@ function Footer(): React.ReactElement<{}> {
   return (
     <Container className={classes.container} maxWidth='xl'>
       <Typography variant='caption' className={classes.body}>
-        Made with 🌮 and React
+        Made with React and GraphQL | Copyright 2020
       </Typography>
     </Container>
   );
