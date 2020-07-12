@@ -32,11 +32,9 @@ export type Query = {
   getUser: GetUserResult;
 };
 
-
 export type QueryGetPostArgs = {
   input: GetPostInput;
 };
-
 
 export type QueryGetUserArgs = {
   input: GetUserInput;

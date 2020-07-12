@@ -14,4 +14,3 @@ const GraphQLServerOptions: ApolloServerExpressConfig = {
 };
 
 export { GraphQLApi, GraphQLApiArgs, schema, GraphQLServerOptions };
-
