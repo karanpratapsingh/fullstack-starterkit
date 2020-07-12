@@ -16,7 +16,9 @@
   "bugs": {
     "url": "https://github.com/karanpratapsingh/fullstack-starterkit/issues"
   },
-  "scripts": {
+  "scripts": {    
+    "start:web": "cd web && yarn start",
+    "start:backend": "cd backend && yarn start",
     "lint": "yarn eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:fix": "yarn prettier --write . && yarn lint --fix"
   },
@@ -30,6 +32,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.0",
     "husky": "^4.2.5",
+    "pm2": "^4.4.0",
     "prettier": "^2.0.5",
     "typescript": "^3.9.5"
   },
