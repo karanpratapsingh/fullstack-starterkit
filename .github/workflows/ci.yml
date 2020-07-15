@@ -1,4 +1,4 @@
-name: CI
+name: Test
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
       - develop
 
 jobs:
-  setup:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -27,12 +27,6 @@ jobs:
           yarn install --frozen-lockfile
           cd web && yarn install --frozen-lockfile
           cd ../backend && yarn install --frozen-lockfile && cd ..
-  test:
-    runs-on: ubuntu-latest
-    needs: setup
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
 
       - name: Check for lint errors
         run: yarn lint
@@ -44,6 +38,29 @@ jobs:
         run: cd backend && yarn test
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-  # build:
-  #   runs-on: ubuntu-latest
-  #   needs: test
+
+      - name: pre upload
+        run: ls
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: upload
+          path: .
+      - name: post upload
+        run: ls
+  build:
+    runs-on: ubuntu-latest
+    steps:  
+      - name: in build job
+        run: ls
+
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: download
+          path: .
+        
+      - name: post download
+        run: ls
+        
