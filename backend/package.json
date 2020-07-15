@@ -20,7 +20,8 @@
   "scripts": {
     "start": "yarn build && node -r ts-node/register -r tsconfig-paths/register build/index.js",
     "start:development": "yarn nodemon --exec yarn ts-node -r tsconfig-paths/register index.ts",
-    "test": "jest --passWithNoTests --detectOpenHandles --verbose",
+    "test": "yarn test:clean && yarn jest --passWithNoTests --detectOpenHandles --verbose",
+    "test:clean": "yarn jest clean --passWithNoTests",
     "generate:schema": "yarn workspace @project-backend/graphql run generate",
     "generate:prisma": "yarn workspace @project-backend/db run generate",
     "postinstall": "yarn generate:prisma",
