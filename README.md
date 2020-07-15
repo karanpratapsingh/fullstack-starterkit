@@ -36,7 +36,7 @@ The main purpose of this repository is to provide a scalable "batteries included
 
 ### :rocket: Technologies Used
 
- <img width="54px" style="margin: 10px 12px; " src="https://user-images.githubusercontent.com/29705703/86937850-5cb97a00-c15d-11ea-9f8c-e33560edaf16.png"><img width="60px" style="margin: 10px 12px; " src="https://user-images.githubusercontent.com/29705703/86937849-5c20e380-c15d-11ea-866d-6b5523fa5ec3.png"><img width="60px" style="margin: 10px 12px; " src="https://user-images.githubusercontent.com/29705703/86937838-5925f300-c15d-11ea-9eec-68b2e16b4041.png"><img width="44px" style="margin: 10px 12px; " src="https://user-images.githubusercontent.com/29705703/86937843-5b884d00-c15d-11ea-8b9f-639e29fc66d1.png"><img width="46px" style="margin: 10px 12px; " src="https://user-images.githubusercontent.com/29705703/86937840-5a572000-c15d-11ea-8615-6a9e1c6eb835.png"><img width="52px" style="margin: 10px 12px; " src="https://user-images.githubusercontent.com/29705703/86937832-57f4c600-c15d-11ea-9f1d-da108bf28265.png">
+ <img src="https://user-images.githubusercontent.com/29705703/87513798-e8b82e00-c696-11ea-9591-ed5ba8f12464.png" alt='technologies'>
 
 ### 📖 Contents
 - [Architecture](#architecture)
