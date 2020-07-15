@@ -38,7 +38,7 @@ jobs:
         run: cd backend && yarn test
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        
+
   build:
     if: github.event.push == 'true'
     runs-on: ubuntu-latest
@@ -61,14 +61,11 @@ jobs:
       - name: Build master
         run: |
           echo 'building master'
-          cd web && yarn build
-          cd ../backend && yarn build
+          yarn build:web && yarn build:backend
         if: contains(github.head_ref, 'master') || contains(github.ref, 'master')
 
       - name: Build develop
         run: |
           echo 'building develop'
-          cd web && yarn build
-          cd ../backend && yarn build
+          yarn build:web && yarn build:backend
         if: contains(github.head_ref, 'develop') || contains(github.ref, 'develop')
-
