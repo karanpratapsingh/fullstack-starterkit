@@ -2,22 +2,24 @@ name: Test Pull Requests
 
 on:
   pull_request:
-    branches: [ master, develop ]
+    branches: [master, develop]
 
 jobs:
   test_pull_request:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 12
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
-    - name: Check for lint errors
-      run: yarn lint
-      
-    - name: Run tests for web
-      run: cd web && yarn test
-      
-    - name: Run tests for backend
-      run: cd backend && yarn test
+      - name: Check for lint errors
+        run: yarn lint
+
+      - name: Run tests for web
+        run: cd web && yarn test
+
+      - name: Run tests for backend
+        run: cd backend && yarn test
