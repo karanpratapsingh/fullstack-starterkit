@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: trigger
-        run: ${{ github.event }}
+        run: echo ${{ github.event }}
       - name: Checkout code
         uses: actions/checkout@v2
 
