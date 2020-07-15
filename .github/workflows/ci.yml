@@ -1,0 +1,71 @@
+name: Test and Build
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install dependencies
+        run: |
+          yarn install --frozen-lockfile
+          cd web && yarn install --frozen-lockfile
+          cd ../backend && yarn install --frozen-lockfile && cd ..
+
+      - name: Check for lint errors
+        run: yarn lint
+
+      - name: Run tests for web
+        run: cd web && yarn test
+
+      - name: Run tests for backend
+        run: cd backend && yarn test
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+  build:
+    if: github.event.push == 'true'
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install dependencies
+        run: |
+          yarn install --frozen-lockfile
+          cd web && yarn install --frozen-lockfile
+          cd ../backend && yarn install --frozen-lockfile && cd ..
+
+      - name: Build master
+        run: |
+          echo 'building master'
+          yarn build:web && yarn build:backend
+        if: contains(github.head_ref, 'master') || contains(github.ref, 'master')
+
+      - name: Build develop
+        run: |
+          echo 'building develop'
+          yarn build:web && yarn build:backend
+        if: contains(github.head_ref, 'develop') || contains(github.ref, 'develop')

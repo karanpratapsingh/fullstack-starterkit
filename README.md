@@ -23,7 +23,7 @@ The main purpose of this repository is to provide a scalable "batteries included
   This starterkit is built with graphql first approach using the [Apollo](https://www.apollographql.com/) platform 
 
 - **Includes CI** 
-  CI is integral part of any project. This starterkit includes `Circle CI` and `Github Actions` by default. PR's for integration with any other providers are welcome 🙌
+  CI is integral part of any project. This starterkit includes `Github Actions` by default. PR's for integration with any other providers are welcome 🙌
 
 - **Testing Focused**
   This project uses [Jest](https://jestjs.io/) for testing framework and comes with sample tests which are easy to extend
@@ -36,7 +36,7 @@ The main purpose of this repository is to provide a scalable "batteries included
 
 ### :rocket: Technologies Used
 
- <img src="https://user-images.githubusercontent.com/29705703/87513798-e8b82e00-c696-11ea-9591-ed5ba8f12464.png" alt='technologies'>
+ <img src="https://user-images.githubusercontent.com/29705703/87513798-e8b82e00-c696-11ea-9591-ed5ba8f12464.png" alt='technologies' width='80%'>
 
 ### 📖 Contents
 - [Architecture](#architecture)
