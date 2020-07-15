@@ -13,7 +13,10 @@ jobs:
         with:
           node-version: 12
       - name: Install dependencies
-        run: yarn install --frozen-lockfile && cd web && yarn install --frozen-lockfile && cd ../backend && yarn install --frozen-lockfile && cd ..
+        run: |
+          yarn install --frozen-lockfile
+          cd web && yarn install --frozen-lockfile
+          cd ../backend && yarn install --frozen-lockfile && cd ..
 
       - name: Check for lint errors
         run: yarn lint
