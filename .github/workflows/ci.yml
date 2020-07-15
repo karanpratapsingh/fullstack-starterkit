@@ -51,6 +51,7 @@ jobs:
         run: ls
   build:
     runs-on: ubuntu-latest
+    needs: test
     steps:  
       - name: in build job
         run: ls
