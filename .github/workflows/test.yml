@@ -1,10 +1,6 @@
 name: Test
 
 on:
-  push:
-    branches:
-      - master
-      - develop
   pull_request:
     branches:
       - master
@@ -38,30 +34,3 @@ jobs:
         run: cd backend && yarn test
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-
-      - name: pre upload
-        run: ls
-
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: upload
-          path: .
-      - name: post upload
-        run: ls
-  build:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:  
-      - name: in build job
-        run: ls
-
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: download
-          path: .
-        
-      - name: post download
-        run: ls
-        
