@@ -5,6 +5,6 @@ module.exports = {
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/build/'],
   moduleNameMapper: {
     '@backend/config': '<rootDir>/config',
-    '@backend/(.*)$': '<rootDir>/packages/$1',
+    '@backend/(.*)$': '<rootDir>/packages/$1'
   }
 };
