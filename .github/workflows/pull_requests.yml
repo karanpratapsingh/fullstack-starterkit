@@ -26,3 +26,5 @@ jobs:
 
       - name: Run tests for backend
         run: cd backend && yarn test
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
