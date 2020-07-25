@@ -46,9 +46,9 @@ The main purpose of this repository is to provide a scalable "batteries included
 - [How to Contribute](#how-to-contribute)
 - [License](#license)
 
-### 🏭 Architecture {#architecture}
+### 🏭 <a id="architecture" style="color: black;">Architecture</a>
 
-#### [Backend](#backend)
+#### <a id="backend" style="color: black;">Backend</a>
 
 Here is the folder structure for `backend`, it is using `yarn workspaces` which helps us split our  monorepo into packages such as DB, GraphQL. Which if required can be made into their own micro services.
 
@@ -105,7 +105,7 @@ It is organized so because if you choose to split graphql into it's own set of m
 
 Read more about GraphQL package [here](./backend/packages/graphql/README.md)
 
-#### Web {#web}
+#### <a id='web' style="color: black;">Web</a>
 Here is the folder structure for `web`, it is a standard [create-react-app](https://create-react-app.dev/) using [react-app-rewired](https://github.com/timarney/react-app-rewired) to override configs without ejecting
 
 Web package uses [Material UI](https://material-ui.com/) heavily as it makes theming and customization very easy. PR's for any other UI kit are welcome 😃
@@ -135,7 +135,7 @@ web
 ```
 
 
-### 🏃 Getting started {#getting-started}
+### 🏃 <a id="getting-started" style="color: black;">Getting Started</a>
 
 **Setting up environment variables**
 
@@ -155,7 +155,7 @@ yarn
 yarn start:backend
 ```
 
-<i>Make sure to use your own `DATABASE_URL` and not the default as provided in `.env.template` when developing your own project, as the database might be changed/deleted anytime</i>
+<i>Make sure to use your own `DATABASE_URL` and not the default as provided in `.env.template` when developing your own project, as the demo database might be changed/deleted anytime</i>
 
 **Running web**
 
@@ -167,7 +167,7 @@ yarn start:web
 Feel free to open a new issue if you're facing any problem 🙋
 </i>
 
-### 👏 How to Contribute {#how-to-contribute}
+### 👏 <a id="how-to-contribute" style="color: black;">How to Contribute</a>
 
 Contributions are welcome as always, before submitting a new PR please make sure to open a new
 issue so community members can discuss.
@@ -176,6 +176,6 @@ Additionally you might find existing open issues which can helps with improvemen
 
 This project follows standard [code of conduct](/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
 
-### 📄 License {#license}
+### 📄 <a id="license" style="color: black;">License</a>
 
 This project is MIT licensed, as found in the [LICENSE](/LICENSE)
