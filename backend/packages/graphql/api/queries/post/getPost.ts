@@ -8,6 +8,9 @@ const getPost = gql`
         content
         published
         title
+        author {
+          id
+        }
       }
     }
   }
