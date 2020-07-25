@@ -7,5 +7,6 @@ module.exports = {
   moduleNameMapper: {
     '@backend/config': '<rootDir>/config',
     '@backend/(.*)$': '<rootDir>/packages/$1'
-  }
+  },
+  setupFiles: ['<rootDir>/packages/utils/env.ts']
 };
