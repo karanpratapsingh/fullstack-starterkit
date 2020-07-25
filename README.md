@@ -48,7 +48,7 @@ The main purpose of this repository is to provide a scalable "batteries included
 
 ### 🏭 Architecture {#architecture}
 
-#### Backend (#backend)
+#### [Backend](#backend)
 
 Here is the folder structure for `backend`, it is using `yarn workspaces` which helps us split our  monorepo into packages such as DB, GraphQL. Which if required can be made into their own micro services.
 
