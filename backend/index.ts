@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { ApolloServer } from 'apollo-server-express';
 import { GraphQLServerOptions } from '@backend/graphql';
+import { logger } from '@backend/utils';
 
 const app = express();
 app.use(cors());
@@ -11,5 +12,5 @@ const server = new ApolloServer(GraphQLServerOptions);
 server.applyMiddleware({ app });
 
 app.listen(PORT, () => {
-  console.log('GraphQL Server is running 🚀');
+  logger.info('GraphQL Server is running 🚀');
 });

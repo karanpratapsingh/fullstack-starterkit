@@ -7,7 +7,7 @@ const { logPath } = Config;
 class LoggerUtils {
   private static instance: Logger;
 
-  private constructor() {
+  private getLogger(): Logger {
     const logger = winston.createLogger({
       level: 'info',
       format: winston.format.combine(
@@ -35,12 +35,13 @@ class LoggerUtils {
       );
     }
 
-    LoggerUtils.instance = logger;
+    return logger;
   }
 
   static getInstance(): Logger {
     if (!LoggerUtils.instance) {
-      new LoggerUtils();
+      const loggerUtils = new LoggerUtils();
+      LoggerUtils.instance = loggerUtils.getLogger();
     }
 
     return LoggerUtils.instance;
