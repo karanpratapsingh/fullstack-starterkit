@@ -1,6 +1,7 @@
 ![fullstack-starterkit](https://user-images.githubusercontent.com/29705703/86912939-7b0e7e00-c13b-11ea-950b-200a4529ae6b.png)
 
 <p align="center">
+<a href="https://www.codacy.com/manual/karanpratapsingh/fullstack-starterkit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=karanpratapsingh/fullstack-starterkit&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/a1a0da0231dc4759aad40b42cec607f5"/></a>
 <img src="https://img.shields.io/badge/License-MIT-red.svg" />
 <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
 <img src="https://img.shields.io/twitter/follow/karan_6864.svg?style=social" />
