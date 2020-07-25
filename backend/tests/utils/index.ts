@@ -3,6 +3,7 @@
  * This test suite utils helps with setting up jest environment
  * for testing database and graphql api
  */
+
 import { Prisma, prisma } from '../../packages/db';
 import { GraphQLApi, GraphQLApiArgs } from '../../packages/graphql';
 import { User, Post } from '../../packages/graphql/types';

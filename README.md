@@ -36,7 +36,7 @@ The main purpose of this repository is to provide a scalable "batteries included
 
 ### :rocket: Technologies Used
 
- <img src="https://user-images.githubusercontent.com/29705703/87513798-e8b82e00-c696-11ea-9591-ed5ba8f12464.png" alt='technologies' width='80%'>
+ <img src="https://user-images.githubusercontent.com/29705703/87513798-e8b82e00-c696-11ea-9591-ed5ba8f12464.png" alt='technologies' width='60%'>
 
 ### 📖 Contents
 - [Architecture](#architecture)
@@ -179,3 +179,13 @@ This project follows standard [code of conduct](/CODE_OF_CONDUCT.md) so that you
 ### 📄 <a id="license" style="color: black;">License</a>
 
 This project is MIT licensed, as found in the [LICENSE](/LICENSE)
+
+<p>
+  <p  style="margin: 0">  
+    Built and maintained with 🌮 by <a href="https://karanpratapsingh.com">Karan</a>
+  </p>
+  <p style="margin: 0px 10px;">  
+    <a href="mailto:contact@karanpratapsingh.com">💼 Hire Me</a> | 
+    <a href="https://www.paypal.me/karanpratapsingh">🍺 Donate</a> 
+  </p>
+</p> 
