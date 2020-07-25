@@ -1203,15 +1203,15 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@prisma/cli@^2.1.3":
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/@prisma/cli/-/cli-2.1.3.tgz#f3439781f3f3cf4114183d21cd0bfe486b122cdb"
-  integrity sha512-JlLSldk21TFcU8FIORHFd/zR889TJvjnYW3ufUNjOHRwbZTkBrs+KT+aSRb9aAp0vVmEgm+T44O+6V7/iwJUIA==
+"@prisma/cli@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@prisma/cli/-/cli-2.3.0.tgz#ddc89de63c2fcb88199fdd1b490a7616a2d32de1"
+  integrity sha512-S84VeeUR3I2Z1fkBh3x42KmVyFgiX4USzIN5N5EDyoWC8BSlMVs2eHeLlhHOtx68sDz5oNo/YEIM2bkU8cUZKA==
 
-"@prisma/client@^2.1.3":
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.1.3.tgz#92bcd81101a8ee939943867c134089d1bb29b2b9"
-  integrity sha512-5D8Uty1++j+rvlr0GzFGF98WjaWq61JfVYEdKe4DDubJfo6o85D/Y7TJ9IhmnMveUF3wk4CfPs8yNFt9rS0ZIA==
+"@prisma/client@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.3.0.tgz#3979d973e0eececad5387c791aa1dd63316fc690"
+  integrity sha512-mlXV/VdOKjEEoZPOmFOy7KJPecYGV5XSVXGsti0F1kkShpGcMvhPkpKhNOwIb/8muUTeN5NoNqEGqKDD5XKw3w==
   dependencies:
     pkg-up "^3.1.0"
 
@@ -3177,11 +3177,6 @@ escodegen@^1.14.1:
     optionator "^0.8.1"
   optionalDependencies:
     source-map "~0.6.1"
-
-eslint-import-resolver-alias@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/eslint-import-resolver-alias/-/eslint-import-resolver-alias-1.1.2.tgz#297062890e31e4d6651eb5eba9534e1f6e68fc97"
-  integrity sha512-WdviM1Eu834zsfjHtcGHtGfcu+F30Od3V7I9Fi57uhBEwPkjDcii7/yW8jAT+gOhn4P/vOxxNAXbFAKsrrc15w==
 
 esprima@^4.0.0, esprima@^4.0.1:
   version "4.0.1"
