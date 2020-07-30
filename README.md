@@ -144,7 +144,7 @@ Before getting started, create `.env` files at both `backend/.env` as well as `w
 
 **Install dependencies**
 
-I recommend using `yarn` instead of `npm` as this project heavily used `yarn workspaces`
+I recommend using `yarn` instead of `npm` as this project heavily uses `yarn workspaces`
 
 ```
 yarn
