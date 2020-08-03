@@ -53,7 +53,9 @@ function Welcome(): React.ReactElement<{}> {
         powered by TypeScript
       </Typography>
       <Typography variant='caption' className={classes.body}>
-        <Link to='/pwa' style={{ textDecoration: 'none' }}>PWA Support now added!</Link>
+        <Link to='/pwa' style={{ textDecoration: 'none' }}>
+          PWA Support now added!
+        </Link>
       </Typography>
     </Container>
   );

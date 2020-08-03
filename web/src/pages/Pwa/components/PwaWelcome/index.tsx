@@ -25,7 +25,7 @@ const useStyles = makeStyles(({ palette, typography, spacing, breakpoints }) => 
   title: {
     color: palette.grey[800],
     fontWeight: typography.fontWeightRegular,
-    marginTop: spacing(4),
+    marginTop: spacing(4)
   },
   subtitle: {
     color: palette.grey[700],
@@ -47,7 +47,10 @@ function PwaWelcome(): React.ReactElement<{}> {
       <img className={classes.logo} src={PwaLogo} alt='starterkit' />
       <img className={classes.logo} src={ReactLogo} alt='starterkit' />
       <Typography variant='h4' className={classes.title}>
-        <Link to='/' style={{ textDecoration: 'none' }}> Full Stack Starterkit </Link>
+        <Link to='/' style={{ textDecoration: 'none' }}>
+          {' '}
+          Full Stack Starterkit{' '}
+        </Link>
       </Typography>
       <Typography variant='body2' className={classes.subtitle}>
         GraphQL first starter kit that scales
