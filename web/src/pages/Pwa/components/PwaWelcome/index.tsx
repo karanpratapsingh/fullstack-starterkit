@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactLogo from '@web/assets/images/logo.png';
+import PwaLogo from '@web/assets/images/pwaLogo.png';
 import { Container, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
@@ -12,6 +13,7 @@ const useStyles = makeStyles(({ palette, typography, spacing, breakpoints }) => 
     flexDirection: 'column'
   },
   logo: {
+    marginTop: spacing(3),
     width: '40%',
     [breakpoints.down('sm')]: {
       width: '60%'
@@ -23,7 +25,7 @@ const useStyles = makeStyles(({ palette, typography, spacing, breakpoints }) => 
   title: {
     color: palette.grey[800],
     fontWeight: typography.fontWeightRegular,
-    marginTop: spacing(4)
+    marginTop: spacing(4),
   },
   subtitle: {
     color: palette.grey[700],
@@ -37,14 +39,15 @@ const useStyles = makeStyles(({ palette, typography, spacing, breakpoints }) => 
   }
 }));
 
-function Welcome(): React.ReactElement<{}> {
+function PwaWelcome(): React.ReactElement<{}> {
   const classes = useStyles();
 
   return (
     <Container className={classes.container}>
+      <img className={classes.logo} src={PwaLogo} alt='starterkit' />
       <img className={classes.logo} src={ReactLogo} alt='starterkit' />
       <Typography variant='h4' className={classes.title}>
-        Full Stack Starterkit
+        <Link to='/' style={{ textDecoration: 'none' }}> Full Stack Starterkit </Link>
       </Typography>
       <Typography variant='body2' className={classes.subtitle}>
         GraphQL first starter kit that scales
@@ -53,10 +56,10 @@ function Welcome(): React.ReactElement<{}> {
         powered by TypeScript
       </Typography>
       <Typography variant='caption' className={classes.body}>
-        <Link to='/pwa' style={{ textDecoration: 'none' }}>PWA Support now added!</Link>
+        PWA Support added now!
       </Typography>
     </Container>
   );
 }
 
-export default Welcome;
+export default PwaWelcome;

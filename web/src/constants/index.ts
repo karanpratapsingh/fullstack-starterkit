@@ -1,3 +1,4 @@
 export enum Routes {
-  HOME = '/'
+  HOME = '/',
+  PWA = '/pwa'
 }

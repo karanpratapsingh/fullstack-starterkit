@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@material-ui/core';
 import { Routes } from '@web/constants';
 import '@web/global/root.css';
-import { Home } from '@web/pages';
+import { Home, Pwa } from '@web/pages';
 import theme from '@web/theme';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -20,7 +20,8 @@ function App(): React.ReactElement {
       <ThemeProvider theme={theme}>
         <Router>
           <Switch>
-            <Route path={Routes.HOME} component={Home} />
+            <Route exact path={Routes.HOME} component={Home} />
+            <Route exact path={Routes.PWA} component={Pwa} />
           </Switch>
           <Route component={Footer} />
         </Router>
