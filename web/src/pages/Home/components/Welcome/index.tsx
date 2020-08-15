@@ -51,6 +51,9 @@ function Welcome(): React.ReactElement<{}> {
       <Typography variant='caption' className={classes.body}>
         powered by TypeScript
       </Typography>
+      <Typography variant='caption' className={classes.body}>
+        PWA Support now added!
+      </Typography>
     </Container>
   );
 }
