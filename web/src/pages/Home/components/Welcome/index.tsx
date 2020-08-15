@@ -2,7 +2,6 @@ import React from 'react';
 import ReactLogo from '@web/assets/images/logo.png';
 import { Container, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(({ palette, typography, spacing, breakpoints }) => ({
   container: {
@@ -53,9 +52,7 @@ function Welcome(): React.ReactElement<{}> {
         powered by TypeScript
       </Typography>
       <Typography variant='caption' className={classes.body}>
-        <Link to='/pwa' style={{ textDecoration: 'none' }}>
-          PWA Support now added!
-        </Link>
+        PWA Support now added!
       </Typography>
     </Container>
   );
