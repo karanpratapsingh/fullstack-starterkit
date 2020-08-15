@@ -41,14 +41,20 @@
         -->
     <script>
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('worker.js').then(function(registration) {
-            console.log('Worker registration successful', registration.scope);
-          }, function(error) {
-            console.log('Worker registration failed', error);
-          }).catch(function(error) {
-            console.log(error);
-          });
+        window.addEventListener('load', function () {
+          navigator.serviceWorker
+            .register('worker.js')
+            .then(
+              function (registration) {
+                console.log('Worker registration successful', registration.scope);
+              },
+              function (error) {
+                console.log('Worker registration failed', error);
+              }
+            )
+            .catch(function (error) {
+              console.log(error);
+            });
         });
       } else {
         console.log('Service Worker is not supported by browser.');
