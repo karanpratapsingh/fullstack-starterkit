@@ -41,7 +41,7 @@ class TestSuiteUtils {
 
   private afterAll = async (done: () => void): Promise<void> => {
     await this.cleanup();
-    await this.prisma.disconnect();
+    await this.prisma.$disconnect();
     done();
   };
 
@@ -56,7 +56,7 @@ class TestSuiteUtils {
     };
 
     const users: BatchPayload = await this.prisma.user.deleteMany(input);
-    const posts: BatchPayload = await this.prisma.user.deleteMany(input);
+    const posts: BatchPayload = await this.prisma.post.deleteMany(input);
 
     this.logger.info(`Cleaned ${users.count} users(s)`);
     this.logger.info(`Cleaned ${posts.count} post(s)`);

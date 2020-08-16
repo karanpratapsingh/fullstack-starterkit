@@ -20,10 +20,14 @@
     "generate": "yarn graphql-codegen --config codegen.yml"
   },
   "dependencies": {
-    "@graphql-codegen/cli": "^1.15.4",
-    "@graphql-codegen/schema-ast": "^1.15.4",
-    "@graphql-codegen/typescript": "^1.15.4",
-    "graphql": "^15.1.0",
-    "graphql-tools": "^6.0.11"
+    "graphql": "^15.3.0",
+    "graphql-tools": "^6.0.18"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.17.8",
+    "@graphql-codegen/schema-ast": "^1.17.8",
+    "@graphql-codegen/typescript": "^1.17.8",
+    "@graphql-codegen/typescript-operations": "^1.17.8",
+    "@graphql-codegen/typescript-react-apollo": "^2.0.6"
   }
 }

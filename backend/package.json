@@ -22,7 +22,7 @@
     "start:development": "yarn nodemon --exec yarn ts-node -r tsconfig-paths/register index.ts",
     "test": "yarn test:clean && yarn jest --passWithNoTests --detectOpenHandles --verbose",
     "test:clean": "yarn jest clean --passWithNoTests",
-    "generate:schema": "yarn workspace @project-backend/graphql run generate",
+    "generate:graphql": "yarn workspace @project-backend/graphql run generate",
     "generate:prisma": "yarn workspace @project-backend/db run generate",
     "postinstall": "yarn generate:prisma",
     "build": "tsc --build && yarn copy",

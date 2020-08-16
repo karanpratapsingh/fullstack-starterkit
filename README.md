@@ -123,9 +123,11 @@ web
 │   ├── config
 │   ├── constants
 │   ├── global
-│   ├── layout     <---- controls, pure components
 │   ├── tests
+│   ├── layout     <---- controls, pure components
 │   ├── theme      <---- theme config
+│   ├── graphql
+│   │   └── operations.tsx     <---- generated graphql operations and types
 │   ├── pages
 │   │   └──  Home   <---- page component
 │   │        ├── components <---- page specific components

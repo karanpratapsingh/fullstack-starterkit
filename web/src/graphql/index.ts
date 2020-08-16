@@ -43,4 +43,4 @@ function configureApolloClient(config: Config): ApolloClient<NormalizedCacheObje
 }
 
 export { configureApolloClient };
-export * from './queries';
+export * from './operations';
