@@ -41,7 +41,7 @@ class TestSuiteUtils {
 
   private afterAll = async (done: () => void): Promise<void> => {
     await this.cleanup();
-    await this.prisma.disconnect();
+    await this.prisma.$disconnect();
     done();
   };
 
