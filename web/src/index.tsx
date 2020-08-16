@@ -6,7 +6,7 @@ import theme from '@web/theme';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider } from '@apollo/client';
 import { configureApolloClient } from '@web/graphql';
 import Config from '@web/config';
 import { Footer } from '@web/layout';
