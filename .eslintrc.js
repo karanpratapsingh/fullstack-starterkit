@@ -8,6 +8,9 @@ module.exports = {
     }
   },
   settings: {
+    react: {
+      version: '16.13'
+    },
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx']
     },
@@ -79,6 +82,6 @@ module.exports = {
     'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
     'react/jsx-no-bind': 'error',
     'react/jsx-no-literals': 'off',
-    'react/jsx-space-before-closing': 'error'
+    'react/jsx-tag-spacing': ['error', { beforeSelfClosing: 'always' }]
   }
 };
