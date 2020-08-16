@@ -1,10 +1,7 @@
-import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
-import ApolloClient from 'apollo-client';
-import { ApolloLink, split } from 'apollo-link';
-import { onError } from 'apollo-link-error';
-import { HttpLink } from 'apollo-link-http';
-import { WebSocketLink } from 'apollo-link-ws';
-import { getMainDefinition } from 'apollo-utilities';
+import { ApolloClient, InMemoryCache, NormalizedCacheObject, HttpLink, split, ApolloLink } from '@apollo/client';
+import { WebSocketLink } from '@apollo/client/link/ws';
+import { onError } from '@apollo/client/link/error';
+import { getMainDefinition } from '@apollo/client/utilities';
 import Config from '@web/config';
 
 function configureApolloClient(config: Config): ApolloClient<NormalizedCacheObject> {

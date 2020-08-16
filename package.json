@@ -22,7 +22,8 @@
     "build:web": "cd web && yarn build",
     "build:backend": "cd backend && yarn build",
     "lint": "yarn eslint --ext .js,.jsx,.ts,.tsx .",
-    "lint:fix": "yarn prettier --write . && yarn lint --fix"
+    "lint:fix": "yarn prettier --write . && yarn lint --fix",
+    "postinstall": "cd web && yarn && cd ../backend && yarn && cd .."
   },
   "devDependencies": {
     "@types/jest": "^26.0.3",

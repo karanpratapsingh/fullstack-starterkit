@@ -32,6 +32,9 @@ The main purpose of this repository is to provide a scalable "batteries included
 - **Prisma**
   [Prisma](https://www.prisma.io/) is the ORM being used for [PostgreSQL](https://www.postgresql.org/). Feel free to submit a PR for any other ORM or drivers you'd like to see here 😁
 
+- **PWA Support**
+  This starterkit comes with out of the box PWA support
+
 
 **Please leave a :star: as motivation if you liked the idea :smile:**
 
@@ -149,6 +152,8 @@ I recommend using `yarn` instead of `npm` as this project heavily uses `yarn wor
 ```
 yarn
 ```
+
+<i>To install dependencies for `web` and `backend` automatically, a postinstall script has been added in the main `package.json`</i>
 
 **Running backend**
 
