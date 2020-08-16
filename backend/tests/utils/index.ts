@@ -56,7 +56,7 @@ class TestSuiteUtils {
     };
 
     const users: BatchPayload = await this.prisma.user.deleteMany(input);
-    const posts: BatchPayload = await this.prisma.user.deleteMany(input);
+    const posts: BatchPayload = await this.prisma.post.deleteMany(input);
 
     this.logger.info(`Cleaned ${users.count} users(s)`);
     this.logger.info(`Cleaned ${posts.count} post(s)`);
