@@ -126,8 +126,8 @@ web
 │   ├── tests
 │   ├── layout     <---- controls, pure components
 │   ├── theme      <---- theme config
-│   ├── types
-│   │   └── graphql.tsx     <---- generated graphql types
+│   ├── graphql
+│   │   └── operations.tsx     <---- generated graphql operations and types
 │   ├── pages
 │   │   └──  Home   <---- page component
 │   │        ├── components <---- page specific components
