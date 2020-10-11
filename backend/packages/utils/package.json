@@ -17,7 +17,7 @@
     "url": "https://github.com/karanpratapsingh/fullstack-starterkit/issues"
   },
   "dependencies": {
-    "cuid": "^2.1.8",
-    "winston": "^3.3.3"
+    "cuid": "2.1.8",
+    "winston": "3.3.3"
   }
 }

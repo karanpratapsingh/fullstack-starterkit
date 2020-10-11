@@ -25,9 +25,9 @@
     "postinstall": "yarn generate"
   },
   "devDependencies": {
-    "@prisma/cli": "^2.4.1"
+    "@prisma/cli": "2.8.1"
   },
   "dependencies": {
-    "@prisma/client": "^2.4.1"
+    "@prisma/client": "2.8.1"
   }
 }
