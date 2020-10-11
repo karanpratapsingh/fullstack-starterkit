@@ -1,6 +1,8 @@
+const { override } = require('customize-cra');
+const { addReactRefresh } = require('customize-cra-react-refresh');
 const { alias, configPaths } = require('react-app-rewire-alias');
 
-module.exports = function override(config) {
-  alias({ ...configPaths('tsconfig.paths.json') })(config);
-  return config;
-};
+module.exports = override(
+  addReactRefresh(),
+  alias({ ...configPaths('tsconfig.paths.json') })
+);

@@ -64,6 +64,8 @@
     ]
   },
   "devDependencies": {
+    "customize-cra": "1.0.0",
+    "customize-cra-react-refresh": "1.1.0",
     "react-app-rewire-alias": "0.1.6",
     "react-app-rewired": "2.1.6"
   }
