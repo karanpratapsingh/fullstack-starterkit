@@ -4,8 +4,8 @@
 <img src="https://img.shields.io/codacy/grade/a1a0da0231dc4759aad40b42cec607f5?style=for-the-badge" />
 <img src="https://img.shields.io/badge/License-MIT-red.svg?style=for-the-badge" />
 <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge" alt="PRs welcome!" />
-<img alt="Twitter: karan_6864" src="https://img.shields.io/twitter/follow/karan_6864.svg?style=for-the-badge&logo=TWITTER&logoColor=FFFFFF&labelColor=00aced&logoWidth=20&color=lightgray" target="_blank" />
 <img src="https://img.shields.io/github/workflow/status/karanpratapsingh/fullstack-starterkit/Test%20and%20Build?style=for-the-badge" />
+<img alt="Twitter: karan_6864" src="https://img.shields.io/twitter/follow/karan_6864.svg?style=for-the-badge&logo=TWITTER&logoColor=FFFFFF&labelColor=00aced&logoWidth=20&color=lightgray" target="_blank" />
 
 ### Motivation :star:
 
