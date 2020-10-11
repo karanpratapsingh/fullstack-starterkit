@@ -24,10 +24,8 @@
     "migrate:up": "yarn prisma migrate up --experimental --schema=./prisma/schema.prisma",
     "postinstall": "yarn generate"
   },
-  "devDependencies": {
-    "@prisma/cli": "2.8.1"
-  },
   "dependencies": {
+    "@prisma/cli": "2.8.1",
     "@prisma/client": "2.8.1"
   }
 }
