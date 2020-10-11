@@ -8,7 +8,7 @@ const useStyles = makeStyles(({ palette, typography, spacing }) => ({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
-    padding: `${spacing(1)}px 0px`,
+    padding: `${spacing(2)}px 0px`,
     backgroundColor: palette.grey[100]
   },
   body: {
@@ -21,11 +21,12 @@ const useStyles = makeStyles(({ palette, typography, spacing }) => ({
 
 function Footer(): React.ReactElement<{}> {
   const classes = useStyles();
+  const year = new Date().getFullYear();
 
   return (
     <Container className={classes.container} maxWidth='xl'>
       <Typography variant='caption' className={classes.body}>
-        Made with React and GraphQL | Copyright 2020
+        Made with React and GraphQL | Copyright {year}
       </Typography>
     </Container>
   );

@@ -1,11 +1,11 @@
 ![fullstack-starterkit](https://user-images.githubusercontent.com/29705703/86912939-7b0e7e00-c13b-11ea-950b-200a4529ae6b.png)
 
 <p align="center">
-<a href="https://www.codacy.com/manual/karanpratapsingh/fullstack-starterkit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=karanpratapsingh/fullstack-starterkit&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/a1a0da0231dc4759aad40b42cec607f5"/></a>
-<img src="https://img.shields.io/badge/License-MIT-red.svg" />
-<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
-<img src="https://img.shields.io/twitter/follow/karan_6864.svg?style=social" />
-</p>
+<img src="https://img.shields.io/codacy/grade/a1a0da0231dc4759aad40b42cec607f5?style=for-the-badge" />
+<img src="https://img.shields.io/badge/License-MIT-red.svg?style=for-the-badge" />
+<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge" alt="PRs welcome!" />
+<img src="https://img.shields.io/github/workflow/status/karanpratapsingh/fullstack-starterkit/Test%20and%20Build?style=for-the-badge" />
+<img alt="Twitter: karan_6864" src="https://img.shields.io/twitter/follow/karan_6864.svg?style=for-the-badge&logo=TWITTER&logoColor=FFFFFF&labelColor=00aced&logoWidth=20&color=lightgray" target="_blank" />
 
 ### Motivation :star:
 
