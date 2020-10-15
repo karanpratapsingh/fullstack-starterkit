@@ -1,4 +1,4 @@
-name: Test and Build
+name: CI
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 12.16.1
 
       - name: Install dependencies
         run: |
