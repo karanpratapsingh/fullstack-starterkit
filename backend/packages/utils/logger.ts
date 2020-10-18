@@ -1,3 +1,11 @@
+/**
+ * Logger
+ *
+ * This utility helps with logging.
+ *
+ * Checkout transports available for winston:
+ * https://github.com/winstonjs/winston/blob/master/docs/transports.md
+ */
 import winston, { Logger, Logform } from 'winston';
 import { join } from 'path';
 import Config from '@backend/config';
