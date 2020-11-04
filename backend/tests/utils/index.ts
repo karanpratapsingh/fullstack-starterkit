@@ -15,7 +15,15 @@ enum TestSuiteType {
   GRAPHQL
 }
 
-class TestSuiteUtils {
+interface TestSuite {
+  prisma: Prisma;
+  graphQLApi: GraphQLApi;
+  logger: Logger;
+  createUserInput: (user?: User) => User;
+  createPostInput: (post?: Post) => Post;
+}
+
+class TestSuiteUtils implements TestSuite {
   prisma: Prisma = prisma;
   graphQLApi!: GraphQLApi;
   logger: Logger = logger;
@@ -45,7 +53,7 @@ class TestSuiteUtils {
     done();
   };
 
-  cleanup = async (): Promise<void> => {
+  private cleanup = async (): Promise<void> => {
     this.logger.info('Running DB Cleanup');
     const input = {
       where: {
@@ -84,4 +92,4 @@ class TestSuiteUtils {
   };
 }
 
-export { TestSuiteUtils as default, TestSuiteType };
+export { TestSuiteUtils as default, TestSuite, TestSuiteType };

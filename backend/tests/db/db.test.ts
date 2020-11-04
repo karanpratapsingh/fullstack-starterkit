@@ -1,8 +1,8 @@
-import TestSuiteUtils, { TestSuiteType } from '../utils';
+import TestSuiteUtils, { TestSuite, TestSuiteType } from '../utils';
 import { User, Post } from '@prisma/client';
 import { Prisma } from '../../packages/db';
 
-const utils = new TestSuiteUtils(TestSuiteType.DB);
+const utils: TestSuite = new TestSuiteUtils(TestSuiteType.DB);
 
 let prisma: Prisma;
 let createUserInput;
