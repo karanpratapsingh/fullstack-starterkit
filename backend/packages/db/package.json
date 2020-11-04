@@ -24,7 +24,7 @@
     "migrate:up": "yarn prisma migrate up --experimental --schema=./prisma/schema.prisma"
   },
   "dependencies": {
-    "@prisma/cli": "2.8.1",
-    "@prisma/client": "2.8.1"
+    "@prisma/cli": "2.10.2",
+    "@prisma/client": "2.10.2"
   }
 }
