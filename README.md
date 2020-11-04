@@ -50,6 +50,13 @@ The main purpose of this repository is to provide a scalable "batteries included
 - [How to Contribute](#how-to-contribute)
 - [License](#license)
 
+
+### Video Overview
+
+Here's a brief video overview of this project, hope it helps.
+
+[![Full Stack Starterkit Overview](http://img.youtube.com/vi/TgtUhEnW8O4/0.jpg)](http://www.youtube.com/watch?v=TgtUhEnW8O4 "Full Stack Starterkit Overview")
+
 ### 🏭 <a id="architecture" style="color: black;">Architecture</a>
 
 #### <a id="backend" style="color: black;">Backend</a>
