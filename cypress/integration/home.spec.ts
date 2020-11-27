@@ -9,9 +9,11 @@ context('Actions', () => {
   });
 
   it('Should load the Home page', () => {
-    cy.get(withID(Selectors.title)).should('be.visible').should(element => {
-      expect(element).to.have.length(1);
-      expect(element.first().text()).to.be.eq('Full Stack Starterkit');
-    });
+    cy.get(withID(Selectors.title))
+      .should('be.visible')
+      .should(element => {
+        expect(element).to.have.length(1);
+        expect(element.first().text()).to.be.eq('Full Stack Starterkit');
+      });
   });
 });
