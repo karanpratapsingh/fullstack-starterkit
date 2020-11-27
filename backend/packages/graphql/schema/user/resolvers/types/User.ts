@@ -9,7 +9,7 @@ const User = {
     const { id } = parent;
     const { prisma } = context;
 
-    return prisma.user.findOne({ where: { id } }).posts();
+    return prisma.user.findUnique({ where: { id } }).posts();
   }
 };
 

@@ -23,12 +23,14 @@
     "build:backend": "cd backend && yarn build",
     "lint": "yarn eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:fix": "yarn prettier --write . && yarn lint --fix",
+    "e2e": "yarn cypress open",
     "postinstall": "cd web && yarn && cd ../backend && yarn && cd .."
   },
   "devDependencies": {
     "@types/jest": "26.0.14",
     "@typescript-eslint/eslint-plugin": "4.4.0",
     "@typescript-eslint/parser": "4.4.0",
+    "cypress": "6.0.0",
     "eslint": "6.6.0",
     "eslint-import-resolver-alias": "1.1.2",
     "eslint-plugin-import": "2.22.1",

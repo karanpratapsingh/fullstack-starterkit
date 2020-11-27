@@ -1,7 +1,7 @@
-import TestSuiteUtils, { TestSuiteType } from '../utils';
+import TestSuiteUtils, { TestSuite, TestSuiteType } from '../utils';
 import { GraphQLApi } from '../../packages/graphql';
 
-const utils = new TestSuiteUtils(TestSuiteType.GRAPHQL);
+const utils: TestSuite = new TestSuiteUtils(TestSuiteType.GRAPHQL);
 
 let graphQLApi: GraphQLApi;
 
