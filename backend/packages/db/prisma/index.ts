@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Prisma as PRISMA } from '@prisma/client';
 
 class Prisma extends PrismaClient {
   private static instance: Prisma;
@@ -18,4 +18,4 @@ class Prisma extends PrismaClient {
 
 const prisma = Prisma.getInstance();
 
-export { Prisma, prisma };
+export { PRISMA, Prisma, prisma };

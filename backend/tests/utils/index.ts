@@ -4,11 +4,10 @@
  * for testing database and graphql api
  */
 
-import { Prisma, prisma } from '../../packages/db';
+import { PRISMA, Prisma, prisma } from '../../packages/db';
 import { GraphQLApi, GraphQLApiArgs } from '../../packages/graphql';
-import { User, Post } from '../../packages/graphql/types';
-import { BatchPayload } from '@prisma/client';
-import { Logger, logger, generateId } from '../../packages/utils';
+import { Post, User } from '../../packages/graphql/types';
+import { generateId, Logger, logger } from '../../packages/utils';
 
 enum TestSuiteType {
   DB,
@@ -63,8 +62,8 @@ class TestSuiteUtils implements TestSuite {
       }
     };
 
-    const users: BatchPayload = await this.prisma.user.deleteMany(input);
-    const posts: BatchPayload = await this.prisma.post.deleteMany(input);
+    const users: PRISMA.BatchPayload = await this.prisma.user.deleteMany(input);
+    const posts: PRISMA.BatchPayload = await this.prisma.post.deleteMany(input);
 
     this.logger.info(`Cleaned ${users.count} user(s)`);
     this.logger.info(`Cleaned ${posts.count} post(s)`);
