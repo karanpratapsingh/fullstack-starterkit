@@ -6,7 +6,7 @@ async function getUser(_: Parent, args: QueryGetUserArgs, context: Context): Pro
   const { input } = args;
   const { id }: GetUserInput = input;
 
-  const user: User | null = await prisma.user.findOne({ where: { id } });
+  const user: User | null = await prisma.user.findUnique({ where: { id } });
 
   return { user };
 }

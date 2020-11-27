@@ -6,7 +6,7 @@ async function getPost(_: Parent, args: QueryGetPostArgs, context: Context): Pro
   const { input } = args;
   const { id }: GetPostInput = input;
 
-  const post: Post | null = await prisma.post.findOne({ where: { id } });
+  const post: Post | null = await prisma.post.findUnique({ where: { id } });
 
   return { post };
 }

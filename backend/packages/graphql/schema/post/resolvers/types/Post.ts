@@ -9,7 +9,7 @@ const Post = {
     const { id } = parent;
     const { prisma } = context;
 
-    return prisma.post.findOne({ where: { id } }).author();
+    return prisma.post.findUnique({ where: { id } }).author();
   }
 };
 
