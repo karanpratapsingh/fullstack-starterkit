@@ -2,6 +2,7 @@ import React from 'react';
 import ReactLogo from '@web/assets/images/logo.png';
 import { Container, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { Selectors } from '@web/config';
 
 const useStyles = makeStyles(({ palette, typography, spacing, breakpoints }) => ({
   container: {
@@ -42,7 +43,7 @@ function Welcome(): React.ReactElement<{}> {
   return (
     <Container className={classes.container}>
       <img className={classes.logo} src={ReactLogo} alt='starterkit' />
-      <Typography variant='h4' className={classes.title}>
+      <Typography id={Selectors.title} variant='h4' className={classes.title}>
         Full Stack Starterkit
       </Typography>
       <Typography variant='body2' className={classes.subtitle}>
