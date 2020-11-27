@@ -1,3 +1,5 @@
+import Selectors from './test.selectors';
+
 const { version } = require('../../package.json');
 
 class Config {
@@ -18,4 +20,4 @@ class Config {
   }
 }
 
-export default Config;
+export { Config as default, Selectors };
