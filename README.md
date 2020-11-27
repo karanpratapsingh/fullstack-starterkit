@@ -56,7 +56,7 @@ Here's a brief video overview of this project, hope it helps.
 
 [![Full Stack Starterkit Overview](http://img.youtube.com/vi/TgtUhEnW8O4/0.jpg)](http://www.youtube.com/watch?v=TgtUhEnW8O4 "Full Stack Starterkit Overview")
 
-<i>Big thanks to [@mikestaub](https://twitter.com/mikestaub) for mentoring me on the lot a of then ideas you will come across in this repository. Checkout how he's changing social media with [Peapods](https://peapods.com)</i>
+<i>Big thanks to [@mikestaub](https://twitter.com/mikestaub) for mentoring me on the lot of the ideas you will come across in this repository. Checkout how he's changing social media with [Peapods](https://peapods.com)</i>
 
 ### 🏭 <a id="architecture" style="color: black;">Architecture</a>
 
