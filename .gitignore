@@ -108,3 +108,6 @@ dist
 
 ### Builds ###
 build
+
+# External tools
+.husky

@@ -1,4 +1,5 @@
-const { override } = require('customize-cra');
-const { alias, configPaths } = require('react-app-rewire-alias');
+const { alias, aliasJest, configPaths } = require('react-app-rewire-alias');
 
-module.exports = override(alias({ ...configPaths('tsconfig.paths.json') }));
+module.exports = config => alias(configPaths('tsconfig.paths.json'))(config);
+
+module.exports.jest = config => aliasJest(configPaths('tsconfig.paths.json'))(config);

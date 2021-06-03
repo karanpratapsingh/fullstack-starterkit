@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@apollo/client": "3.3.19",
+    "@craco/craco": "6.1.2",
     "@material-ui/core": "4.11.4",
     "@material-ui/icons": "4.11.2",
     "@testing-library/jest-dom": "5.12.0",
@@ -47,6 +48,7 @@
     "typescript": "4.3.2"
   },
   "devDependencies": {
+    "craco-alias": "3.0.1",
     "customize-cra": "1.0.0",
     "react-app-rewire-alias": "1.0.3",
     "react-app-rewired": "2.1.8"

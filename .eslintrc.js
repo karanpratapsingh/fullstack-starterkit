@@ -59,6 +59,7 @@ module.exports = {
     'prefer-const': 'error',
     'no-var': 'error',
     'no-dupe-else-if': 'off',
+    'import/no-unresolved': 'off',
     'import/newline-after-import': ['error', { count: 1 }],
     '@typescript-eslint/no-inferrable-types': 'off',
     '@typescript-eslint/semi': ['error', 'always'],
