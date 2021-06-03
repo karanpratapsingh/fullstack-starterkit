@@ -17,15 +17,16 @@
     "url": "https://github.com/karanpratapsingh/fullstack-starterkit/issues"
   },
   "scripts": {
+    "push": "yarn db push --schema=./prisma/schema.prisma",
     "generate": "yarn prisma generate --schema=./prisma/schema.prisma",
     "introspect": "yarn prisma introspect --schema=./prisma/schema.prisma",
     "studio": "yarn prisma studio --schema=./prisma/schema.prisma",
-    "migrate:save": "yarn prisma migrate save --experimental --schema=./prisma/schema.prisma",
-    "migrate:up": "yarn prisma migrate up --experimental --schema=./prisma/schema.prisma"
+    "migrate:save": "yarn prisma migrate save --schema=./prisma/schema.prisma",
+    "migrate:up": "yarn prisma migrate up --schema=./prisma/schema.prisma"
   },
   "dependencies": {
-    "@prisma/cli": "2.12.1",
-    "@prisma/client": "2.12.1"
+    "@prisma/client": "2.24.0",
+    "prisma": "2.24.0"
   },
   "volta": {
     "node": "14.17.0",
