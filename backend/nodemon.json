@@ -1,0 +1,4 @@
+{
+  "ignore": ["node_modules/*", "tests/*"],
+  "ext": "ts,tsx,js,jsx,json,gql"
+}
