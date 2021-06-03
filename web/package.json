@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "yarn test:clean && react-app-rewired test --watchAll=false",
+    "test": "yarn test:clean && craco test --watchAll=false",
     "test:clean": "yarn jest --passWithNoTests clean",
     "eject": "react-app-rewired eject"
   },
