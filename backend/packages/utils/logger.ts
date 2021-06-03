@@ -30,18 +30,16 @@ class LoggerUtils {
       ]
     });
 
-    if (process.env.NODE_ENV !== 'production') {
-      logger.add(
-        new winston.transports.Console({
-          format: winston.format.combine(
-            winston.format.errors({ stack: true }),
-            winston.format.timestamp(),
-            winston.format.colorize(),
-            winston.format.printf(this.logTransform)
-          )
-        })
-      );
-    }
+    logger.add(
+      new winston.transports.Console({
+        format: winston.format.combine(
+          winston.format.errors({ stack: true }),
+          winston.format.timestamp(),
+          winston.format.colorize(),
+          winston.format.printf(this.logTransform)
+        )
+      })
+    );
 
     return logger;
   }

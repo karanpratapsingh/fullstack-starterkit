@@ -18,46 +18,45 @@
     "url": "https://github.com/karanpratapsingh/fullstack-starterkit/issues"
   },
   "scripts": {
-    "start": "yarn build && node -r ts-node/register -r tsconfig-paths/register build/index.js",
-    "start:development": "yarn nodemon --exec yarn ts-node -r tsconfig-paths/register index.ts",
-    "test": "yarn test:clean && yarn jest --passWithNoTests --detectOpenHandles --verbose",
-    "test:clean": "yarn jest clean --passWithNoTests",
+    "start": "yarn build --watch --hot",
+    "test": "yarn jest --passWithNoTests --detectOpenHandles --verbose",
+    "build": "webpack --color --progress",
+    "build:clean": "rm -rf build && yarn build",
     "generate:graphql": "yarn workspace @project-backend/graphql run generate",
     "generate:prisma": "yarn workspace @project-backend/db run generate",
-    "postinstall": "yarn generate:prisma",
-    "build": "tsc --build && yarn copy",
-    "copy": "yarn copyfiles -e build/**/*.graphql **/*.graphql build"
+    "postinstall": "yarn generate:prisma"
   },
   "dependencies": {
-    "@types/express": "4.17.8",
-    "@types/lodash": "4.14.162",
-    "@types/node": "14.11.8",
-    "apollo-server-express": "2.18.2",
-    "copyfiles": "2.4.0",
+    "@types/express": "4.17.12",
+    "@types/lodash": "4.14.170",
+    "@types/node": "15.9.0",
+    "apollo-server-express": "2.25.0",
     "cors": "2.8.5",
-    "dotenv": "8.2.0",
+    "dotenv": "10.0.0",
     "express": "4.17.1",
-    "lodash": "4.17.20",
-    "typescript": "4.0.3"
+    "lodash": "4.17.21",
+    "typescript": "4.3.2"
   },
   "devDependencies": {
-    "jest": "26.5.2",
-    "nodemon": "2.0.4",
-    "ts-jest": "26.4.1",
-    "ts-node": "9.0.0",
-    "tsconfig-paths": "3.9.0"
-  },
-  "nodemonConfig": {
-    "ext": "js,ts,graphql",
-    "ignore": [
-      "tests/**/*.test.ts",
-      "docs/*"
-    ]
+    "chalk": "4.1.1",
+    "dotenv-webpack": "7.0.3",
+    "esbuild-loader": "2.13.1",
+    "fork-ts-checker-webpack-plugin": "6.2.10",
+    "jest": "27.0.4",
+    "jest-transform-graphql": "2.1.0",
+    "nodemon-webpack-plugin": "4.5.2",
+    "ts-jest": "27.0.2",
+    "webpack": "5.38.1",
+    "webpack-cli": "4.7.0"
   },
   "workspaces": {
     "nohoist": [],
     "packages": [
       "packages/*"
     ]
+  },
+  "volta": {
+    "node": "14.17.0",
+    "yarn": "1.22.10"
   }
 }

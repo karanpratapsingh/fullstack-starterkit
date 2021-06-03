@@ -1,16 +1,17 @@
-import { GraphQLSchema } from 'graphql';
-import { join } from 'path';
+import { DocumentNode, GraphQLSchema } from 'graphql';
 import flatten from 'lodash/flatten';
-import { mergeResolvers, mergeTypeDefs, makeExecutableSchema, loadFilesSync } from 'graphql-tools';
 
-import { userResolvers } from './user';
-import { postResolvers } from './post';
+import { mergeResolvers, mergeTypeDefs } from '@graphql-tools/merge';
+import { makeExecutableSchema } from '@graphql-tools/schema';
+
+import { userTypes, userQueries, userResolvers } from './user';
+import { postTypes, postQueries, postResolvers } from './post';
 
 const resolvers = mergeResolvers([userResolvers, postResolvers]);
 
-const types = loadFilesSync(join(__dirname, './**/types.graphql'));
-const queries = loadFilesSync(join(__dirname, './**/queries.graphql'));
-const mutations = loadFilesSync(join(__dirname, './**/mutations.graphql'));
+const types: DocumentNode[] = [userTypes, postTypes];
+const queries: DocumentNode[] = [userQueries, postQueries];
+const mutations: DocumentNode[] = [];
 
 const typeDefs = mergeTypeDefs(flatten([types, queries, mutations]));
 

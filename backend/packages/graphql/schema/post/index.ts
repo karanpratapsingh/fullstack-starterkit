@@ -1,3 +1,5 @@
+import postTypes from './types.graphql';
+import postQueries from './queries.graphql';
 import postResolvers from './resolvers';
 
-export { postResolvers };
+export { postTypes, postQueries, postResolvers };

@@ -118,7 +118,7 @@ It is organized so because if you choose to split graphql into it's own set of m
 Read more about GraphQL package [here](./backend/packages/graphql/README.md)
 
 #### <a id='web' style="color: black;">Web</a>
-Here is the folder structure for `web`, it is a standard [create-react-app](https://create-react-app.dev/) using [react-app-rewired](https://github.com/timarney/react-app-rewired) to override configs without ejecting
+Here is the folder structure for `web`, it is a standard [create-react-app](https://create-react-app.dev/) using [craco](https://github.com/gsoft-inc/craco) to override configs without ejecting
 
 Web package uses [Material UI](https://material-ui.com/) heavily as it makes theming and customization very easy. PR's for any other UI kit are welcome 😃
 
@@ -158,6 +158,8 @@ Before getting started, create `.env` files at both `backend/.env` as well as `w
 **Install dependencies**
 
 I recommend using `yarn` instead of `npm` as this project heavily uses `yarn workspaces`
+
+Install [volta](https://docs.volta.sh/guide/getting-started), which should automatically install correct `node` and `yarn` version when you checkout the repository (check the root package.json for config)
 
 ```
 yarn

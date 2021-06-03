@@ -19,5 +19,9 @@
   "dependencies": {
     "cuid": "2.1.8",
     "winston": "3.3.3"
+  },
+  "volta": {
+    "node": "14.17.0",
+    "yarn": "1.22.10"
   }
 }
