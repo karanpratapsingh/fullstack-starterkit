@@ -20,8 +20,10 @@
     "generate": "yarn graphql-codegen --config codegen.yml"
   },
   "dependencies": {
+    "@graphql-tools/merge": "6.2.14",
+    "@graphql-tools/schema": "7.1.5",
     "graphql": "15.5.0",
-    "graphql-tools": "7.0.5"
+    "graphql-tag": "2.12.4"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "1.21.5",
