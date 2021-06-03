@@ -29,5 +29,9 @@
     "@graphql-codegen/typescript": "1.22.1",
     "@graphql-codegen/typescript-operations": "1.18.0",
     "@graphql-codegen/typescript-react-apollo": "2.2.5"
+  },
+  "volta": {
+    "node": "14.17.0",
+    "yarn": "1.22.10"
   }
 }

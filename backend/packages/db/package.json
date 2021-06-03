@@ -26,5 +26,9 @@
   "dependencies": {
     "@prisma/cli": "2.12.1",
     "@prisma/client": "2.12.1"
+  },
+  "volta": {
+    "node": "14.17.0",
+    "yarn": "1.22.10"
   }
 }
