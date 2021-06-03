@@ -19,8 +19,8 @@ const BUNDLE = {
   entry: './index.ts',
   output: {
     filename: 'app.js',
-    path: path.resolve(__dirname, 'build'),
-  },
+    path: path.resolve(__dirname, 'build')
+  }
 };
 
 module.exports = {
@@ -30,7 +30,7 @@ module.exports = {
   stats: 'errors-only',
   node: {
     __dirname: true,
-    __filename: true,
+    __filename: true
   },
   module: getLoaders(),
   plugins: getPlugins(),
@@ -41,13 +41,10 @@ module.exports = {
       '@backend/graphql': path.resolve(__dirname, 'packages/graphql'),
       '@backend/utils': path.resolve(__dirname, 'packages/utils'),
       '@backend/db': path.resolve(__dirname, 'packages/db'),
-      graphql$: path.resolve(__dirname, 'node_modules/graphql/index.js'),
-    },
+      graphql$: path.resolve(__dirname, 'node_modules/graphql/index.js')
+    }
   },
-  optimization: {
-    minimize: false,
-  },
-  output: BUNDLE.output,
+  output: BUNDLE.output
 };
 
 /**
@@ -57,7 +54,7 @@ function getLoaders() {
   const graphql = {
     test: /\.(graphql|gql)$/,
     exclude: /node_modules/,
-    loader: 'graphql-tag/loader',
+    loader: 'graphql-tag/loader'
   };
 
   const esbuild = {
@@ -65,13 +62,13 @@ function getLoaders() {
     loader: 'esbuild-loader',
     options: {
       loader: 'tsx',
-      target: 'es2015',
+      target: 'es2015'
     },
-    exclude: /node_modules/,
+    exclude: /node_modules/
   };
 
   const loaders = {
-    rules: [graphql, esbuild],
+    rules: [graphql, esbuild]
   };
 
   return loaders;
@@ -89,9 +86,9 @@ function getPlugins() {
       memoryLimit: 8192,
       diagnosticOptions: {
         semantic: true,
-        syntactic: true,
-      },
-    },
+        syntactic: true
+      }
+    }
   });
   // Order matters!
   return [dotEnv, typescriptChecker, nodemon];
