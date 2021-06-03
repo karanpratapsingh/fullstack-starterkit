@@ -23,10 +23,7 @@ jobs:
           node-version: 14.17.0
 
       - name: Install dependencies
-        run: |
-          yarn install --frozen-lockfile
-          cd web && yarn install --frozen-lockfile
-          cd ../backend && yarn install --frozen-lockfile && cd ..
+        run: yarn install --frozen-lockfile
 
       - name: Check for lint errors
         run: yarn lint
