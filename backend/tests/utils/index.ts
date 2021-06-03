@@ -43,6 +43,7 @@ class TestSuiteUtils implements TestSuite {
   }
 
   private setupJest = (): void => {
+    jest.setTimeout(60000);
     global.afterAll(this.afterAll);
   };
 

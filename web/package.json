@@ -16,35 +16,40 @@
   "bugs": {
     "url": "https://github.com/karanpratapsingh/fullstack-starterkit/issues"
   },
-  "dependencies": {
-    "@apollo/client": "3.2.3",
-    "@material-ui/core": "4.11.0",
-    "@material-ui/icons": "4.9.1",
-    "@testing-library/jest-dom": "5.11.4",
-    "@testing-library/react": "11.0.4",
-    "@testing-library/user-event": "12.1.7",
-    "@types/jest": "26.0.14",
-    "@types/material-ui": "0.21.8",
-    "@types/node": "14.11.8",
-    "@types/react": "16.9.51",
-    "@types/react-dom": "16.9.8",
-    "@types/react-router": "5.1.8",
-    "@types/react-router-dom": "5.1.6",
-    "graphql": "15.3.0",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-router": "5.2.0",
-    "react-router-dom": "5.2.0",
-    "react-scripts": "3.4.1",
-    "subscriptions-transport-ws": "0.9.18",
-    "typescript": "4.0.3"
-  },
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "yarn test:clean && react-app-rewired test --watchAll=false",
     "test:clean": "yarn jest --passWithNoTests clean",
     "eject": "react-app-rewired eject"
+  },
+  "dependencies": {
+    "@apollo/client": "3.3.19",
+    "@material-ui/core": "4.11.4",
+    "@material-ui/icons": "4.11.2",
+    "@testing-library/jest-dom": "5.12.0",
+    "@testing-library/react": "11.2.7",
+    "@testing-library/user-event": "13.1.9",
+    "@types/jest": "26.0.23",
+    "@types/material-ui": "0.21.8",
+    "@types/node": "15.9.0",
+    "@types/react": "17.0.9",
+    "@types/react-dom": "17.0.6",
+    "@types/react-router": "5.1.14",
+    "@types/react-router-dom": "5.1.7",
+    "graphql": "15.5.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "4.0.3",
+    "subscriptions-transport-ws": "0.9.18",
+    "typescript": "4.3.2"
+  },
+  "devDependencies": {
+    "customize-cra": "1.0.0",
+    "react-app-rewire-alias": "1.0.3",
+    "react-app-rewired": "2.1.8"
   },
   "jest": {
     "moduleNameMapper": {
@@ -62,11 +67,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "customize-cra": "1.0.0",
-    "customize-cra-react-refresh": "1.1.0",
-    "react-app-rewire-alias": "0.1.6",
-    "react-app-rewired": "2.1.6"
   }
 }

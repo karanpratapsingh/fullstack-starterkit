@@ -159,6 +159,8 @@ Before getting started, create `.env` files at both `backend/.env` as well as `w
 
 I recommend using `yarn` instead of `npm` as this project heavily uses `yarn workspaces`
 
+Install [volta](https://docs.volta.sh/guide/getting-started), which should automatically install correct `node` and `yarn` version when you checkout the repository (check the root package.json for config)
+
 ```
 yarn
 ```
