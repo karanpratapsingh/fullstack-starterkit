@@ -25,8 +25,8 @@
     "migrate:up": "yarn prisma migrate up --schema=./prisma/schema.prisma"
   },
   "dependencies": {
-    "@prisma/client": "2.24.0",
-    "prisma": "2.24.0"
+    "@prisma/client": "2.20.0",
+    "prisma": "2.20.0"
   },
   "volta": {
     "node": "14.17.0",
