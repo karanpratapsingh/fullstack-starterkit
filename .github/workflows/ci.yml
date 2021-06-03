@@ -46,13 +46,10 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14.17.0
 
       - name: Install dependencies
-        run: |
-          yarn install --frozen-lockfile
-          cd web && yarn install --frozen-lockfile
-          cd ../backend && yarn install --frozen-lockfile && cd ..
+        run: yarn install --frozen-lockfile
 
       - name: Build
         run: yarn build:web && yarn build:backend
