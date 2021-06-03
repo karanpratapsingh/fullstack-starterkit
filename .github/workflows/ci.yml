@@ -40,7 +40,6 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
   build:
-    if: github.event.push == 'true'
     runs-on: ubuntu-latest
     needs: test
     steps:
@@ -58,14 +57,5 @@ jobs:
           cd web && yarn install --frozen-lockfile
           cd ../backend && yarn install --frozen-lockfile && cd ..
 
-      - name: Build master
-        run: |
-          echo 'building master'
-          yarn build:web && yarn build:backend
-        if: contains(github.head_ref, 'master') || contains(github.ref, 'master')
-
-      - name: Build develop
-        run: |
-          echo 'building develop'
-          yarn build:web && yarn build:backend
-        if: contains(github.head_ref, 'develop') || contains(github.ref, 'develop')
+      - name: Build
+        run: yarn build:web && yarn build:backend
