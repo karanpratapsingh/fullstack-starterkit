@@ -43,11 +43,13 @@ class TestSuiteUtils implements TestSuite {
   }
 
   private setupJest = (): void => {
-    jest.setTimeout(60000);
-    global.afterAll(this.afterAll);
+    jest.setTimeout(20_000);
+    global.afterAll(done => {
+      this.afterAll(done);
+    });
   };
 
-  private afterAll = async (done: () => void): Promise<void> => {
+  private afterAll = async (done: jest.DoneCallback) => {
     await this.cleanup();
     await this.prisma.$disconnect();
     done();
