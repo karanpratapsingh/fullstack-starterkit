@@ -17,11 +17,11 @@
     "url": "https://github.com/karanpratapsingh/fullstack-starterkit/issues"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "start": "craco start",
+    "build": "craco build",
     "test": "yarn test:clean && craco test --watchAll=false",
     "test:clean": "yarn jest --passWithNoTests clean",
-    "eject": "react-app-rewired eject"
+    "eject": "craco eject"
   },
   "dependencies": {
     "@apollo/client": "3.3.19",
@@ -48,10 +48,7 @@
     "typescript": "4.3.2"
   },
   "devDependencies": {
-    "craco-alias": "3.0.1",
-    "customize-cra": "1.0.0",
-    "react-app-rewire-alias": "1.0.3",
-    "react-app-rewired": "2.1.8"
+    "craco-alias": "3.0.1"
   },
   "jest": {
     "moduleNameMapper": {
