@@ -185,6 +185,21 @@ yarn start:web
 Feel free to open a new issue if you're facing any problem 🙋
 </i>
 
+
+**Codegen**
+
+This starterkit uses [graphql-code-generator](https://github.com/dotansimha/graphql-code-generator) to codegen lot of things like TypeScript types, React Apollo hooks and queries, GraphQL Schema AST etc.
+
+```
+cd backend
+yarn generate:graphql
+```
+
+<i>
+Codegen is also executed in yarn postinstall hook
+</i>
+
+
 ### 👏 <a id="how-to-contribute" style="color: black;">How to Contribute</a>
 
 Contributions are welcome as always, before submitting a new PR please make sure to open a new

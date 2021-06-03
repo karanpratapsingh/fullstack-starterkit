@@ -24,7 +24,7 @@
     "build:clean": "rm -rf build && yarn build",
     "generate:graphql": "yarn workspace @project-backend/graphql run generate",
     "generate:prisma": "yarn workspace @project-backend/db run generate",
-    "postinstall": "yarn generate:prisma"
+    "postinstall": "yarn generate:graphql && yarn generate:prisma"
   },
   "dependencies": {
     "@types/express": "4.17.12",

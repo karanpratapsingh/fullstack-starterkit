@@ -111,3 +111,8 @@ build
 
 # External tools
 .husky
+
+# Codegen
+web/src/graphql/operations.tsx
+backend/packages/graphql/schema.graphql
+backend/packages/graphql/types/schema.ts
