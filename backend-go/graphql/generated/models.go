@@ -20,15 +20,15 @@ type GetUserResult struct {
 
 type Post struct {
 	ID        string  `json:"id"`
+	Title     string  `json:"title"`
 	Content   *string `json:"content"`
 	Published bool    `json:"published"`
-	Title     string  `json:"title"`
 	Author    *User   `json:"author"`
 }
 
 type User struct {
 	ID    string  `json:"id"`
-	Email string  `json:"email"`
 	Name  string  `json:"name"`
+	Email string  `json:"email"`
 	Posts []*Post `json:"posts"`
 }

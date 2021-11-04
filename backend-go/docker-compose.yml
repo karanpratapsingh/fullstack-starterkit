@@ -1,13 +1,37 @@
 version: "3.8"
 
 services:
-  backend-go:
-    container_name: backend-go
+  backend:
+    container_name: backend
     image: backend-go
     restart: always
     build:
       context: .
+      target: app
     volumes:
       - .:/app
+    env_file:
+      - .env
     ports:
       - 4000:4000
+    depends_on:
+        - db
+
+  db:
+    image: db
+    container_name: db
+    build:
+      context: .
+      target: db
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=database
+    ports:
+      - 5432:5432
+    volumes:
+      - ./scripts:/app/scripts
+      - postgres:/var/lib/postgresql/data
+
+volumes:
+  postgres:

@@ -17,6 +17,14 @@ resolver:
 autobind: []
 
 models:
+  User:
+    fields:
+      posts:
+        resolver: true
+  Post:
+    fields:
+      author:
+        resolver: true
   ID:
     model:
       - github.com/99designs/gqlgen/graphql.ID

@@ -9,19 +9,20 @@ import (
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/gorilla/mux"
+	"github.com/jackc/pgx/v4"
 )
 
 const endpoint = "/graphql"
 
-func Run(router *mux.Router) {
-	graphql, playground := getHandlers()
+func Run(r *mux.Router, c *pgx.Conn) {
+	graphql, playground := getHandlers(c)
 
-	router.HandleFunc(endpoint, playground).Methods(http.MethodGet)
-	router.Handle(endpoint, graphql).Methods(http.MethodPost)
+	r.HandleFunc(endpoint, playground).Methods(http.MethodGet)
+	r.Handle(endpoint, graphql).Methods(http.MethodPost)
 }
 
-func getHandlers() (*handler.Server, http.HandlerFunc) {
-	schema := getSchema()
+func getHandlers(c *pgx.Conn) (*handler.Server, http.HandlerFunc) {
+	schema := getSchema(c)
 
 	graphql := handler.NewDefaultServer(schema)
 	playground := playground.Handler("GraphQL playground", endpoint)
@@ -29,9 +30,9 @@ func getHandlers() (*handler.Server, http.HandlerFunc) {
 	return graphql, playground
 }
 
-func getSchema() graphql.ExecutableSchema {
+func getSchema(c *pgx.Conn) graphql.ExecutableSchema {
 	config := generated.Config{
-		Resolvers: &resolvers.Resolver{},
+		Resolvers: &resolvers.Resolver{Conn: c},
 	}
 	return generated.NewExecutableSchema(config)
 }
