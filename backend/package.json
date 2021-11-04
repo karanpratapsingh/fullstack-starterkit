@@ -18,12 +18,16 @@
     "url": "https://github.com/karanpratapsingh/fullstack-starterkit/issues"
   },
   "scripts": {
+    "dev": "docker compose up -d && yarn dev:exec",
+    "dev:exec": "docker exec -it backend-node /bin/sh",
+    "dev:down": "docker compose down",
     "start": "yarn build --watch --hot",
     "test": "yarn jest --passWithNoTests --detectOpenHandles --verbose",
-    "build": "webpack --color --progress",
+    "build": "webpack --color",
     "build:clean": "rm -rf build && yarn build",
     "generate:graphql": "yarn workspace @project-backend/graphql run generate",
     "generate:prisma": "yarn workspace @project-backend/db run generate",
+    "migrate": "yarn workspace @project-backend/db run migrate",
     "postinstall": "yarn generate:graphql && yarn generate:prisma"
   },
   "dependencies": {
@@ -38,6 +42,7 @@
     "typescript": "4.3.2"
   },
   "devDependencies": {
+    "@types/jest": "^27.0.2",
     "chalk": "4.1.1",
     "dotenv-webpack": "7.0.3",
     "esbuild-loader": "2.13.1",

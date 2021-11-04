@@ -21,8 +21,7 @@
     "generate": "yarn prisma generate --schema=./prisma/schema.prisma",
     "introspect": "yarn prisma introspect --schema=./prisma/schema.prisma",
     "studio": "yarn prisma studio --schema=./prisma/schema.prisma",
-    "migrate:save": "yarn prisma migrate save --schema=./prisma/schema.prisma",
-    "migrate:up": "yarn prisma migrate up --schema=./prisma/schema.prisma"
+    "migrate": "yarn prisma migrate dev --schema=./prisma/schema.prisma"
   },
   "dependencies": {
     "@prisma/client": "2.20.0",

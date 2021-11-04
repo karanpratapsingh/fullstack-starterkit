@@ -17,6 +17,8 @@
     "url": "https://github.com/karanpratapsingh/fullstack-starterkit/issues"
   },
   "scripts": {
+    "dev": "docker compose up",
+    "dev:down": "docker compose down",
     "start": "craco start",
     "build": "craco build",
     "test": "yarn test:clean && craco test --watchAll=false",

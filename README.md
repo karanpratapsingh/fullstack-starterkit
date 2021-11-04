@@ -26,6 +26,9 @@ The main purpose of this repository is to provide a scalable "batteries included
 - **Includes CI** 
   CI is integral part of any project. This starterkit includes `Github Actions` by default. PR's for integration with any other providers are welcome 🙌
 
+- **Docker Support**
+  You can also use docker to develop and run your applications
+
 - **Testing Focused**
   This project uses [Jest](https://jestjs.io/) for testing framework and comes with sample tests which are easy to extend
   
@@ -167,24 +170,63 @@ yarn
 
 <i>To install dependencies for `web` and `backend` automatically, a postinstall script has been added in the main `package.json`</i>
 
-**Running backend**
-
-```
-yarn start:backend
-```
-
-<i>Make sure to use your own `DATABASE_URL` and not the default as provided in `.env.template` when developing your own project, as the demo database might be changed/deleted anytime</i>
-
 **Running web**
 
+- Docker (recommended)
+
 ```
-yarn start:web
+$ cd web
+$ yarn dev
+```
+
+Once you're done working, use `yarn dev:down` command to stop the docker containers.
+
+- Locally
+
+```
+$ cd web
+$ yarn start:web
+```
+
+**Running backend**
+
+- Docker (recommended)
+
+```
+$ cd backend
+$ yarn dev
+```
+
+Once the container starts, you'll be inside the backend image. Now, simply migrate the db (only first time) and start the development server.
+
+```
+$ yarn migrate
+$ yarn start
+```
+
+Once you're done working, exit out from the container and use `yarn dev:down` command to stop the docker containers.
+
+- Locally
+
+```
+$ cd backend
+$ yarn start
+```
+
+_Note: When running locally, you'll be required to run your own instance of postgres._
+
+**Running backend-go**
+
+If you don't have [`make`](https://en.wikipedia.org/wiki/Make_(software)) installed, commands are available in `Makefile`.
+
+```
+$ cd backend-go
+$ make dev
 ```
 
 <i>
 Feel free to open a new issue if you're facing any problem 🙋
 </i>
-
 
 **Codegen**
 

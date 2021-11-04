@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+ web:
+    container_name: web
+    image: web
+    restart: always
+    build:
+      context: .
+    volumes:
+      - .:/app
+      - dependencies:/app/node_modules
+    env_file:
+      - .env
+    ports:
+      - 3000:3000
+
+volumes:
+  dependencies:

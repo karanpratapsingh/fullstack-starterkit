@@ -17,10 +17,6 @@
     "url": "https://github.com/karanpratapsingh/fullstack-starterkit/issues"
   },
   "scripts": {
-    "start:web": "cd web && yarn start",
-    "start:backend": "cd backend && yarn start",
-    "build:web": "cd web && yarn build",
-    "build:backend": "cd backend && yarn build",
     "lint": "yarn eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:fix": "yarn prettier --write . && yarn lint --fix",
     "e2e": "yarn cypress open",
