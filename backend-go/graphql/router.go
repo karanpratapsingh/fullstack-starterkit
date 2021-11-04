@@ -8,18 +8,16 @@ import (
 	"github.com/99designs/gqlgen/graphql"
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/gofiber/adaptor/v2"
-	"github.com/gofiber/fiber/v2"
+	"github.com/gorilla/mux"
 )
 
 const endpoint = "/graphql"
 
-func Run(app *fiber.App) {
+func Run(router *mux.Router) {
 	graphql, playground := getHandlers()
 
-	router := app.Group(endpoint)
-	router.Get("/", adaptor.HTTPHandlerFunc(playground))
-	router.Post("/", adaptor.HTTPHandler(graphql))
+	router.HandleFunc(endpoint, playground).Methods(http.MethodGet)
+	router.Handle(endpoint, graphql).Methods(http.MethodPost)
 }
 
 func getHandlers() (*handler.Server, http.HandlerFunc) {
