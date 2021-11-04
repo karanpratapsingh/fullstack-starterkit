@@ -19,7 +19,7 @@
   },
   "scripts": {
     "dev": "docker compose up -d && yarn dev:exec",
-    "dev:exec": "docker exec -it backend-node /bin/sh",
+    "dev:exec": "docker exec -it backend /bin/sh",
     "dev:down": "docker compose down",
     "start": "yarn build --watch --hot",
     "test": "yarn jest --passWithNoTests --detectOpenHandles --verbose",

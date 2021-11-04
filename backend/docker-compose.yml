@@ -1,8 +1,8 @@
 version: "3.8"
 
 services:
-  backend-node:
-    container_name: backend-node
+  backend:
+    container_name: backend
     image: backend-node
     build:
       context: .
