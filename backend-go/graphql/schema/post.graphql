@@ -8,9 +8,9 @@ type GetPostResult {
 
 type Post {
   id: ID!
+  title: String!
   content: String
   published: Boolean!
-  title: String!
   author: User
 }
 

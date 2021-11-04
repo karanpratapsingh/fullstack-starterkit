@@ -12,7 +12,7 @@ extend type Query {
 
 type User {
   id: ID!
-  email: String!
   name: String!
-  posts: [Post]
+  email: String!
+  posts: [Post!]
 }
