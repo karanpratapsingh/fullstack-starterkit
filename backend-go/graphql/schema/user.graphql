@@ -1,0 +1,18 @@
+input GetUserInput {
+  id: ID!
+}
+
+type GetUserResult {
+  user: User
+}
+
+extend type Query {
+  getUser(input: GetUserInput!): GetUserResult!
+}
+
+type User {
+  id: ID!
+  email: String!
+  name: String!
+  posts: [Post]
+}

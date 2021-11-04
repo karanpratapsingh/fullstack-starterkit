@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  backend-go:
+    container_name: backend-go
+    image: backend-go
+    restart: always
+    build:
+      context: .
+    volumes:
+      - .:/app
+    ports:
+      - 4000:4000

@@ -1,0 +1,19 @@
+input GetPostInput {
+  id: ID!
+}
+
+type GetPostResult {
+  post: Post
+}
+
+type Post {
+  id: ID!
+  content: String
+  published: Boolean!
+  title: String!
+  author: User
+}
+
+extend type Query {
+  getPost(input: GetPostInput!): GetPostResult!
+}
