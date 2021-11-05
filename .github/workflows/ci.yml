@@ -30,16 +30,16 @@ jobs:
         with:
           node-version: 14.18.0
 
-      - name: Install dependencies
+      - name: Install
         run: yarn install --frozen-lockfile
 
-      - name: Check for lint errors
+      - name: Lint
         run: yarn lint
 
-      - name: Run tests for Web
+      - name: Test
         run: cd web && yarn test
       
-      - name: Build Web
+      - name: Build
         run: cd web && yarn build
 
   backend:
@@ -67,29 +67,17 @@ jobs:
         with:
           node-version: 14.18.0
 
-      - name: Install dependencies
+      - name: Install
         run: yarn install --frozen-lockfile
 
-      - name: Check for lint errors
+      - name: Lint
         run: yarn lint
 
-      - name: Run tests for Node backend
+      - name: Test
         run: cd backend && yarn migrate && yarn test
 
-      - name: Build Node backend
+      - name: Build
         run: cd backend && yarn build
-
-      - name: Setup Go DB
-        run: psql -h ${{ env.POSTGRES_HOST }} -U ${{ env.POSTGRES_USER }} -d ${{ env.POSTGRES_DB }} -a -f backend-go/scripts/db/dump.sql
-        env:
-          PGPASSWORD: ${{ env.POSTGRES_PASSWORD }}
-
-      - name: Run tests for Go backend
-        run: |
-          cd backend-go
-          go install cmd/main.go
-          make generate
-          go test ./graphql -count=1
 
   backendGo:
     runs-on: ubuntu-latest
@@ -111,17 +99,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup Go DB
+      - name: Setup
         run: psql -h ${{ env.POSTGRES_HOST }} -U ${{ env.POSTGRES_USER }} -d ${{ env.POSTGRES_DB }} -a -f backend-go/scripts/db/dump.sql
         env:
           PGPASSWORD: ${{ env.POSTGRES_PASSWORD }}
 
-      - name: Run tests for Go backend
+      - name: Test
         run: |
           cd backend-go
           go install cmd/main.go
           make generate
+          go mod tidy
           go test ./graphql -count=1
 
-      - name: Build Go backend
+      - name: Build
         run: yarn backend-go && go build cmd/main.go
