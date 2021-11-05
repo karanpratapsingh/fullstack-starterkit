@@ -9,7 +9,6 @@ on:
     branches:
       - master
       - develop
-      - 'feat/fall-update'
 
 env:
   DATABASE_URL: postgres://user:password@127.0.0.1:5432/database
