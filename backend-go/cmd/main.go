@@ -7,6 +7,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	_ "github.com/99designs/gqlgen/cmd"
 )
 
 func main() {

@@ -10,6 +10,10 @@ dev-down:
 run:
 	air
 
+install:
+	go install ./cmd
+	go mod tidy
+
 build:
 	go build main.go
 
