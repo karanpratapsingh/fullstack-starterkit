@@ -107,15 +107,15 @@ jobs:
           go-version: 1.17.2
 
       - name: Setup DB
-        run: psql -h ${{ env.POSTGRES_HOST }} -U ${{ env.POSTGRES_USER }} -d ${{ env.POSTGRES_DB }} -a -f backend-go/scripts/db/dump.sql
+        run: psql -h ${{ env.POSTGRES_HOST }} -U ${{ env.POSTGRES_USER }} -d ${{ env.POSTGRES_DB }} -a -f scripts/db/dump.sql
         env:
           PGPASSWORD: ${{ env.POSTGRES_PASSWORD }}
 
       - name: Install
-        run: cd backend-go && make install && make generate
+        run: make install && make generate
 
       - name: Test
-        run: cd backend-go && make test
+        run: make test
 
       - name: Build
-        run: cd backend-go && make build
+        run: make build
