@@ -13,6 +13,7 @@ install:
 	go mod tidy
 
 test:
+	go test ./db -count=1
 	go test ./graphql -count=1
 
 build:
