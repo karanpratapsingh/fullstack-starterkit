@@ -39,7 +39,7 @@ jobs:
           node-version: 14.18.0
 
       - name: Setup test DB
-        run: psql -h 127.0.0.1 -v -P 5432 -u ${{ env.POSTGRES_USER }} --password=${{ env.POSTGRES_PASSWORD }} < backend-go/scripts/db/dump.sql
+        run: psql -U $POSTGRES_USER -d $POSTGRES_DB -a -f backend-go/scripts/db/dump.sql
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
