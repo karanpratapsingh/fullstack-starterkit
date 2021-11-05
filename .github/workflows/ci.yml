@@ -109,10 +109,10 @@ jobs:
           PGPASSWORD: ${{ env.POSTGRES_PASSWORD }}
 
       - name: Install
-        run: cd backend-go && go install ./cmd && make generate
+        run: cd backend-go && make install && make generate
 
       - name: Test
-        run:  cd backend-go && go test ./graphql -count=1
+        run: cd backend-go && make test
 
       - name: Build
-        run: yarn backend-go && go build cmd/main.go
+        run: cd backend-go && make build

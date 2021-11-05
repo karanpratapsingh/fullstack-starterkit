@@ -14,8 +14,11 @@ install:
 	go install ./cmd
 	go mod tidy
 
+test:
+	go test ./graphql -count=1
+
 build:
-	go build main.go
+	go build cmd/main.go
 
 generate:
 	go run github.com/99designs/gqlgen generate
