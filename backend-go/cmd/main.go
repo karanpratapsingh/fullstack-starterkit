@@ -8,23 +8,26 @@ import (
 	"os"
 
 	"github.com/gorilla/mux"
-	"github.com/jackc/pgx/v4"
+	"github.com/jackc/pgx/v4/pgxpool"
 )
 
-const port = ":4000"
+var (
+	port   = ":4000"
+	db_url = os.Getenv("DATABASE_URL")
+)
 
 func main() {
 	router := mux.NewRouter()
-	conn, err := pgx.Connect(context.Background(), os.Getenv("DATABASE_URL"))
+	pool, err := pgxpool.Connect(context.Background(), db_url)
 
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Unable to connect to database: %v\n", err)
 		os.Exit(1)
 	}
 
-	defer conn.Close(context.Background())
+	defer pool.Close()
 
-	graphql.Run(router, conn)
+	graphql.Run(router, pool)
 
 	fmt.Println("Server is running")
 	http.ListenAndServe(port, router)
