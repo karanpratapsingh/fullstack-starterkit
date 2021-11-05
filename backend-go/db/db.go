@@ -15,11 +15,11 @@ type DB interface {
 	GetPosts(ctx context.Context, userID string) ([]*generated.Post, error)
 }
 
-type postgres struct {
+type Postgres struct {
 	pool *pgxpool.Pool
 }
 
-func New() postgres {
+func New() Postgres {
 	dbURL := os.Getenv("DATABASE_URL")
 	pool, err := pgxpool.Connect(context.Background(), dbURL)
 
@@ -28,14 +28,14 @@ func New() postgres {
 		os.Exit(1)
 	}
 
-	return postgres{pool}
+	return Postgres{pool}
 }
 
-func (db postgres) GetPool() *pgxpool.Pool {
+func (db Postgres) GetPool() *pgxpool.Pool {
 	return db.pool
 }
 
-func (db postgres) GetUser(ctx context.Context, id string) (*generated.User, error) {
+func (db Postgres) GetUser(ctx context.Context, id string) (*generated.User, error) {
 	var user generated.User
 
 	query := "SELECT id, name, email FROM users WHERE id=$1"
@@ -48,7 +48,7 @@ func (db postgres) GetUser(ctx context.Context, id string) (*generated.User, err
 	return &user, nil
 }
 
-func (db postgres) GetPost(ctx context.Context, id string) (*generated.Post, error) {
+func (db Postgres) GetPost(ctx context.Context, id string) (*generated.Post, error) {
 	var post generated.Post
 	var author generated.User
 
@@ -64,7 +64,7 @@ func (db postgres) GetPost(ctx context.Context, id string) (*generated.Post, err
 	return &post, nil
 }
 
-func (db postgres) GetPosts(ctx context.Context, userID string) ([]*generated.Post, error) {
+func (db Postgres) GetPosts(ctx context.Context, userID string) ([]*generated.Post, error) {
 	var posts []*generated.Post
 
 	query := "SELECT id, title, content, published, author_id FROM posts WHERE author_id=$1"
