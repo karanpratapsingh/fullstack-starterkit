@@ -1,30 +1,20 @@
 package main
 
 import (
+	"backend/db"
 	"backend/graphql"
-	"context"
 	"fmt"
 	"net/http"
-	"os"
 
 	"github.com/gorilla/mux"
-	"github.com/jackc/pgx/v4/pgxpool"
-)
-
-var (
-	port   = ":4000"
-	db_url = os.Getenv("DATABASE_URL")
 )
 
 func main() {
+	var port string = ":4000"
+
 	router := mux.NewRouter()
-	pool, err := pgxpool.Connect(context.Background(), db_url)
 
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Unable to connect to database: %v\n", err)
-		os.Exit(1)
-	}
-
+	pool := db.GetPool()
 	defer pool.Close()
 
 	graphql.Run(router, pool)

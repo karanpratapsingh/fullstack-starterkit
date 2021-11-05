@@ -36,3 +36,10 @@ func getSchema(p *pgxpool.Pool) graphql.ExecutableSchema {
 	}
 	return generated.NewExecutableSchema(config)
 }
+
+func GetSchema(p *pgxpool.Pool) graphql.ExecutableSchema {
+	config := generated.Config{
+		Resolvers: &resolvers.Resolver{Pool: p},
+	}
+	return generated.NewExecutableSchema(config)
+}
