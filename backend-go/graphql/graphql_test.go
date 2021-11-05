@@ -14,7 +14,7 @@ func TestGraphQLResolvers(t *testing.T) {
 	pool := db.GetPool()
 	defer pool.Close()
 
-	schema := GetSchema(pool)
+	schema := getSchema(pool)
 	c := client.New(handler.NewDefaultServer(schema))
 
 	t.Run("Query GetUser", func(t *testing.T) {

@@ -6,13 +6,13 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/gorilla/mux"
 	_ "github.com/99designs/gqlgen/cmd"
+	"github.com/gorilla/mux"
 )
 
-func main() {
-	var port string = ":4000"
+var port = ":4000"
 
+func main() {
 	router := mux.NewRouter()
 
 	pool := db.GetPool()
