@@ -99,18 +99,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup
+      - name: Setup DB
         run: psql -h ${{ env.POSTGRES_HOST }} -U ${{ env.POSTGRES_USER }} -d ${{ env.POSTGRES_DB }} -a -f backend-go/scripts/db/dump.sql
         env:
           PGPASSWORD: ${{ env.POSTGRES_PASSWORD }}
 
+      - name: Install
+        run: cd backend-go && go install cmd/main.go && make generate && go mod tidy
+
       - name: Test
-        run: |
-          cd backend-go
-          go install cmd/main.go
-          make generate
-          go mod tidy
-          go test ./graphql -count=1
+        run:  cd backend-go && go test ./graphql -count=1
 
       - name: Build
         run: yarn backend-go && go build cmd/main.go
