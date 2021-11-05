@@ -16,6 +16,7 @@ env:
   POSTGRES_USER: user
   POSTGRES_PASSWORD: password
   POSTGRES_DB: database
+  POSTGRES_HOST: 127.0.0.1
 
 jobs:
   test:
