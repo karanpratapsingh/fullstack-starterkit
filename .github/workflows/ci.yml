@@ -44,7 +44,7 @@ jobs:
           node-version: 14.18.0
 
       - name: Setup test DB
-        run: psql -U $POSTGRES_USER -d $POSTGRES_DB -a -f backend-go/scripts/db/dump.sql
+        run: psql -U ${{ env.POSTGRES_USER }} -d ${{ env.POSTGRES_DB }} -a -f backend-go/scripts/db/dump.sql
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
