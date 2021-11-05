@@ -45,7 +45,7 @@ jobs:
           node-version: 14.18.0
 
       - name: Setup test DB
-        run: POSTGRES_PASSWORD=password psql -h 127.0.0.1 -U user -d database -a -f backend-go/scripts/db/dump.sql
+        run: PGPASSWORD=password psql -h 127.0.0.1 -U user -d database -a -f backend-go/scripts/db/dump.sql
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
