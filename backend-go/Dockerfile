@@ -7,6 +7,6 @@ FROM golang:1.17.2 as app
 WORKDIR /app
 COPY . .
 RUN curl -sSfL https://raw.githubusercontent.com/cosmtrek/air/master/install.sh | sh -s -- -b $(go env GOPATH)/bin
-RUN go install cmd/main.go
+RUN go install cmd
 RUN make generate
 CMD make run

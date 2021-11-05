@@ -79,7 +79,7 @@ jobs:
       - name: Build
         run: cd backend && yarn build
 
-  backendGo:
+  backend-go:
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -105,7 +105,7 @@ jobs:
           PGPASSWORD: ${{ env.POSTGRES_PASSWORD }}
 
       - name: Install
-        run: cd backend-go && go install cmd/main.go && make generate && go mod tidy
+        run: cd backend-go && go install ./cmd && make generate
 
       - name: Test
         run:  cd backend-go && go test ./graphql -count=1
