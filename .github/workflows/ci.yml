@@ -25,9 +25,9 @@ jobs:
       postgres:
         image: postgres:12
         env:
-          POSTGRES_USER: ${{ env.POSTGRES_USER }}
-          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
-          POSTGRES_DB: ${{ env.POSTGRES_DB }}
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: database
         ports:
           - 5432:5432
         options: >-
@@ -45,9 +45,7 @@ jobs:
           node-version: 14.18.0
 
       - name: Setup test DB
-        run: psql -h 127.0.0.1 -U ${{ env.POSTGRES_USER }} -d ${{ env.POSTGRES_DB }} -a -f backend-go/scripts/db/dump.sql
-        env:
-          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
+        run: POSTGRES_PASSWORD=password psql -h 127.0.0.1 -U user -d database -a -f backend-go/scripts/db/dump.sql
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -59,7 +57,7 @@ jobs:
         run: cd web && yarn test
 
       - name: Run tests for Node backend
-        run: cd backend && yarn test
+        run: cd backend && yarn migrate && yarn test
 
       - name: Run tests for Go backend
         run: |
