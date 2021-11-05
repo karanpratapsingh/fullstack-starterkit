@@ -6,38 +6,22 @@ package resolvers
 import (
 	"backend/graphql/generated"
 	"context"
-	"fmt"
 )
 
 func (r *postResolver) Author(ctx context.Context, obj *generated.Post) (*generated.User, error) {
-	var user generated.User
+	user, err := r.DB.GetUser(ctx, obj.Author.ID)
 
-	query := "SELECT id, name, email FROM users WHERE id=$1"
-	err := r.Pool.QueryRow(ctx, query, &obj.Author.ID).Scan(&user.ID, &user.Name, &user.Email)
-
-	if err != nil {
-		return nil, fmt.Errorf(`no author found for post: %s %s`, obj.ID, err.Error())
-	}
-
-	return &user, nil
+	return user, err
 }
 
 func (r *queryResolver) GetPost(ctx context.Context, input generated.GetPostInput) (*generated.GetPostResult, error) {
-	var post generated.Post
-	var author generated.User
+	post, err := r.DB.GetPost(ctx, input.ID)
 
-	query := "SELECT id, title, content, published, author_id FROM posts WHERE id=$1"
-	err := r.Pool.QueryRow(ctx, query, &input.ID).Scan(&post.ID, &post.Title, &post.Content, &post.Published, &author.ID)
-
-	if err != nil {
-		return nil, fmt.Errorf(`no post found for id: %s %s`, input.ID, err.Error())
+	result := &generated.GetPostResult{
+		Post: post,
 	}
 
-	post.Author = &author
-
-	return &generated.GetPostResult{
-		Post: &post,
-	}, nil
+	return result, err
 }
 
 // Post returns generated.PostResolver implementation.

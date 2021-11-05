@@ -1,7 +1,5 @@
 dev:
-	docker compose up
-
-exec:
+	docker compose up -d --build
 	docker exec -it backend /bin/bash
 
 dev-down:

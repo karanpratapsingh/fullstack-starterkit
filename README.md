@@ -224,6 +224,13 @@ $ cd backend-go
 $ make dev
 ```
 
+Now from inside the container, you can run the tests or application like below:
+
+```
+$ make test
+$ make run
+```
+
 <i>
 Feel free to open a new issue if you're facing any problem 🙋
 </i>
