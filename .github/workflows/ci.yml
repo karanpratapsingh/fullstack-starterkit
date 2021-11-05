@@ -9,10 +9,26 @@ on:
     branches:
       - master
       - develop
+      - 'feat/fall-update'
+
+env:
+  DATABASE_URL: postgres://user:password@db:5432/database
+  POSTGRES_USER: user
+  POSTGRES_PASSWORD: password
+  POSTGRES_DB: database
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_USER: ${{ env.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
+          POSTGRES_DB: ${{ env.POSTGRES_DB }}
+        ports:
+          - "5432:5432"
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -21,6 +37,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.18.0
+
+      - name: Setup test DB
+        run: psql -h 127.0.0.1 -v -P 5432 -u ${{ env.POSTGRES_USER }} --password=${{ env.POSTGRES_PASSWORD }} < backend-go/scripts/db/dump.sql
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -31,10 +50,15 @@ jobs:
       - name: Run tests for web
         run: cd web && yarn test
 
-      - name: Run tests for backend
+      - name: Run tests for Node backend
         run: cd backend && yarn test
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Run tests for Go backend
+        run: |
+          cd backend-go
+          go install cmd/main.go
+          make generate
+          go test ./graphql -count=1
 
   build:
     runs-on: ubuntu-latest
@@ -51,5 +75,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Build
-        run: yarn build:web && yarn build:backend
+      - name: Build Web
+        run: cd web && yarn build
+      
+      - name: Build Node backend
+        run: cd backend && yarn build
+
+      - name: Build Go backend
+        run: yarn backend-go && go build cmd/main.go
