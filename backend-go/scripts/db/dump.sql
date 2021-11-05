@@ -1,6 +1,3 @@
-CREATE DATABASE IF NOT EXISTS `database`;
-USE `database`;
-
 -- CreateTable
 CREATE TABLE IF NOT EXISTS users (
   "id" TEXT NOT NULL,
@@ -22,7 +19,7 @@ CREATE TABLE IF NOT EXISTS posts (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX users.email_unique ON users("email");
+CREATE UNIQUE INDEX email_unique ON users("email");
 
 -- AddForeignKey
 ALTER TABLE posts ADD FOREIGN KEY ("author_id") REFERENCES users("id") ON DELETE SET NULL ON UPDATE CASCADE;
