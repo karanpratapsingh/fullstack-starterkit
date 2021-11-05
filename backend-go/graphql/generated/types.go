@@ -249,15 +249,7 @@ func (ec *executionContext) introspectType(name string) (*introspection.Type, er
 }
 
 var sources = []*ast.Source{
-	{Name: "graphql/schema/post.graphql", Input: `input GetPostInput {
-  id: ID!
-}
-
-type GetPostResult {
-  post: Post
-}
-
-type Post {
+	{Name: "graphql/schema/post.graphql", Input: `type Post {
   id: ID!
   title: String!
   content: String
@@ -268,24 +260,32 @@ type Post {
 extend type Query {
   getPost(input: GetPostInput!): GetPostResult!
 }
-`, BuiltIn: false},
-	{Name: "graphql/schema/user.graphql", Input: `input GetUserInput {
+
+input GetPostInput {
   id: ID!
 }
 
-type GetUserResult {
-  user: User
+type GetPostResult {
+  post: Post
+}
+`, BuiltIn: false},
+	{Name: "graphql/schema/user.graphql", Input: `type User {
+  id: ID!
+  name: String!
+  email: String!
+  posts: [Post!]
 }
 
 extend type Query {
   getUser(input: GetUserInput!): GetUserResult!
 }
 
-type User {
+input GetUserInput {
   id: ID!
-  name: String!
-  email: String!
-  posts: [Post!]
+}
+
+type GetUserResult {
+  user: User
 }
 `, BuiltIn: false},
 }
