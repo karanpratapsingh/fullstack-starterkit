@@ -43,8 +43,8 @@ The main purpose of this repository is to provide a scalable "batteries included
 
 ### :rocket: Technologies Used
 
- <img src="https://user-images.githubusercontent.com/29705703/140599161-f9c247eb-4459-4ae9-a6c8-d1e7fe8cc116.png" alt='technologies' width='80%'>
-  
+<img src="https://user-images.githubusercontent.com/29705703/140613353-47b10569-288e-49af-995e-e7fb89fe5566.png" alt='technologies' width='80%'>
+
 ### 📖 Contents
 - [Architecture](#architecture)
   - [Backend](#backend)
