@@ -1,5 +1,4 @@
 install:
-	curl -sSfL https://raw.githubusercontent.com/cosmtrek/air/master/install.sh | sh -s -- -b $(go env GOPATH)/bin
 	go install ./cmd
 	go mod tidy
 
