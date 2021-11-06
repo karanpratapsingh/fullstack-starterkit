@@ -1,16 +1,14 @@
-dev:
-	docker compose up -d --build
-	docker exec -it backend /bin/bash
+install:
+	curl -sSfL https://raw.githubusercontent.com/cosmtrek/air/master/install.sh | sh -s -- -b $(go env GOPATH)/bin
+	go install ./cmd
+	go mod tidy
 
-dev-down:
-	docker compose down
+dev:
+	docker compose up -d
+	docker exec -it backend /bin/bash
 
 run:
 	air
-
-install:
-	go install ./cmd
-	go mod tidy
 
 test:
 	go test ./db -count=1

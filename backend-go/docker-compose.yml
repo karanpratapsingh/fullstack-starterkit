@@ -30,7 +30,6 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ./scripts:/app/scripts
       - postgres:/var/lib/postgresql/data
 
 volumes:
