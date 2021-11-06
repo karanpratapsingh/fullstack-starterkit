@@ -10,8 +10,15 @@ on:
       - master
       - develop
 
+env:
+  DATABASE_URL: postgres://user:password@127.0.0.1:5432/database
+  POSTGRES_USER: user
+  POSTGRES_PASSWORD: password
+  POSTGRES_DB: database
+  POSTGRES_HOST: 127.0.0.1
+
 jobs:
-  test:
+  web:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -20,25 +27,36 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: 14.17.0
+          node-version: 14.18.0
 
-      - name: Install dependencies
+      - name: Install
         run: yarn install --frozen-lockfile
 
-      - name: Check for lint errors
+      - name: Lint
         run: yarn lint
 
-      - name: Run tests for web
+      - name: Test
         run: cd web && yarn test
+      
+      - name: Build
+        run: cd web && yarn build
 
-      - name: Run tests for backend
-        run: cd backend && yarn test
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-
-  build:
+  backend:
     runs-on: ubuntu-latest
-    needs: test
+    services:
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: database
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -46,10 +64,57 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: 14.17.0
+          node-version: 14.18.0
 
-      - name: Install dependencies
+      - name: Install
         run: yarn install --frozen-lockfile
 
+      - name: Lint
+        run: yarn lint
+
+      - name: Test
+        run: cd backend && yarn migrate && yarn test
+
       - name: Build
-        run: yarn build:web && yarn build:backend
+        run: cd backend && yarn build
+
+  backend-go:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend-go
+    services:
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: database
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - uses: actions/setup-go@v2
+        with:
+          go-version: 1.17.2
+
+      - name: Setup DB
+        run: psql -h ${{ env.POSTGRES_HOST }} -U ${{ env.POSTGRES_USER }} -d ${{ env.POSTGRES_DB }} -a -f scripts/db/dump.sql
+        env:
+          PGPASSWORD: ${{ env.POSTGRES_PASSWORD }}
+
+      - name: Install
+        run: make install && make generate
+
+      - name: Test
+        run: make test
+
+      - name: Build
+        run: make build

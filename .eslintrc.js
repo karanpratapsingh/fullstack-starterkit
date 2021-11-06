@@ -9,7 +9,7 @@ module.exports = {
   },
   settings: {
     react: {
-      version: '16.13'
+      version: '14.18'
     },
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx']
