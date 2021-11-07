@@ -1,7 +1,7 @@
 package main
 
 import (
-	database "backend/db"
+	"backend/db"
 	"backend/graphql"
 	"fmt"
 	"net/http"
@@ -15,10 +15,10 @@ var port = ":4000"
 func main() {
 	router := mux.NewRouter()
 
-	db := database.New()
-	defer db.GetPool().Close()
+	postgres := db.NewPostgres()
+	defer postgres.GetPool().Close()
 
-	graphql.Run(router, db)
+	graphql.Run(router, postgres)
 
 	fmt.Println("Server is running")
 	http.ListenAndServe(port, router)

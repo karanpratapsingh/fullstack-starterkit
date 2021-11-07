@@ -1,7 +1,7 @@
 package graphql
 
 import (
-	database "backend/db"
+	"backend/db"
 	"backend/graphql/generated"
 	"testing"
 
@@ -11,10 +11,10 @@ import (
 )
 
 func TestGraphQLResolvers(t *testing.T) {
-	db := database.New()
-	defer db.GetPool().Close()
+	postgres := db.NewPostgres()
+	defer postgres.GetPool().Close()
 
-	schema := getSchema(db)
+	schema := getSchema(postgres)
 	c := client.New(handler.NewDefaultServer(schema))
 
 	t.Run("Query GetUser", func(t *testing.T) {

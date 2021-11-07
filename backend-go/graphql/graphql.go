@@ -14,14 +14,14 @@ import (
 
 const endpoint = "/graphql"
 
-func Run(r *mux.Router, db database.DB) {
+func Run(r *mux.Router, db db.DB) {
 	graphql, playground := getHandlers(db)
 
 	r.HandleFunc(endpoint, playground).Methods(http.MethodGet)
 	r.Handle(endpoint, graphql).Methods(http.MethodPost)
 }
 
-func getHandlers(db database.DB) (*handler.Server, http.HandlerFunc) {
+func getHandlers(db db.DB) (*handler.Server, http.HandlerFunc) {
 	schema := getSchema(db)
 
 	graphql := handler.NewDefaultServer(schema)
@@ -30,7 +30,7 @@ func getHandlers(db database.DB) (*handler.Server, http.HandlerFunc) {
 	return graphql, playground
 }
 
-func getSchema(db database.DB) graphql.ExecutableSchema {
+func getSchema(db db.DB) graphql.ExecutableSchema {
 	config := generated.Config{
 		Resolvers: &resolvers.Resolver{DB: db},
 	}

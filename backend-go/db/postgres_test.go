@@ -1,4 +1,4 @@
-package database
+package db
 
 import (
 	"context"
@@ -8,7 +8,7 @@ import (
 )
 
 func TestDatabase(t *testing.T) {
-	db := New()
+	db := NewPostgres()
 	defer db.GetPool().Close()
 
 	t.Run("GetUser: Should retrieve a user", func(t *testing.T) {
